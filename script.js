@@ -1,6 +1,12 @@
 'use strict'
 // Moving 1708
-
+const imges = document.querySelectorAll('.slider img');
+console.log(imges);
+imges.forEach(item =>{
+    setTimeout(() => {
+        item.style.opacity ='1';
+    }, 3000);
+})
 window.addEventListener('DOMContentLoaded', () =>{
 
 // Preloader
@@ -70,8 +76,8 @@ window.addEventListener('load', ()=>{
                   }
                 ]
               });
-        }, 2);
-     }, 1);
+        }, 1);
+     }, 2);
 
 })
 
@@ -214,9 +220,6 @@ function hideTooltip(a){
 switcherToolTip.addEventListener('mouseenter', () =>{
     hideTooltip(switcherToolTip)
 })
-dotToolTip.addEventListener('mouseenter', () =>{
-    hideTooltip(dotToolTip);
-})
 
 // Price
 
@@ -240,21 +243,37 @@ const   navItems = document.querySelectorAll('nav ul li'),
         toContactsButton = document.querySelector('.intro-content-buttons button:nth-child(2)'),
         logo = document.querySelector('.logo'),
         toTopButton = document.querySelector('.to-top');
+        // section =document.querySelectorAll('.section');
 toContactsButton.addEventListener('click', () => {
-    document.getElementById('contacts').scrollIntoView({behavior:'smooth'});
+    fullpage_api.moveTo(6);
     })
 logo.addEventListener('click',() =>{
     document.getElementById('intro').scrollIntoView({behavior:'smooth'});
 })
+// const   navItems = document.querySelectorAll('nav ul li'),
+//         navArr = [...navItems];
 navArr.forEach(item =>{
     item.addEventListener('click', (e)=>{
-        console.log(navArr.indexOf(item));
-        e.target === navArr[0] ? document.getElementById('equip').scrollIntoView({behavior:'smooth'}):
-        e.target === navArr[1] ? document.getElementById('contacts').scrollIntoView({behavior:'smooth'}):
-        e.target === navArr[2] ? document.getElementById('price').scrollIntoView({behavior:'smooth'}):
+      console.log(fullpage_api.getActiveSection());
+        e.target === navArr[0] ? fullpage_api.moveTo(3):
+        e.target === navArr[1] ? fullpage_api.moveTo(6):
+        e.target === navArr[2] ? fullpage_api.moveTo(4):
         console.log('1');
     })
 })
+// const sectionArr = [...section];
+// sectionArr.forEach(item =>{
+//     item === sectionArr[sectionArr.indexOf(item)] ? console.log(1) : console.log(2);
+// })
+// navArr.forEach(item =>{
+//     item.addEventListener('click', (e)=>{
+//         console.log(navArr.indexOf(item));
+//         e.target === navArr[0] ? document.getElementById('equip').scrollIntoView({behavior:'smooth'}):
+//         e.target === navArr[1] ? document.getElementById('contacts').scrollIntoView({behavior:'smooth'}):
+//         e.target === navArr[2] ? document.getElementById('price').scrollIntoView({behavior:'smooth'}):
+//         console.log('1');
+//     })
+// })
 
 // Order Button
 
