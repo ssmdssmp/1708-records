@@ -463,6 +463,7 @@ li.slick-active button {
   /* background-color: white; */
   margin-left: 90%;
   top: 8vh;
+  right: 3vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1161,29 +1162,25 @@ input {
   .line span {
     color: var(--main-color);
   }
+  .equip {
+    /* overflow: auto; */
+    /* touch-action: pan-x; */
+  }
   /* .equip-content {
     background-position: -50vw;
   } */
-  .equip-bg {
-    object-position: -45vw;
+  .equip-bg,
+  .equip-bg-alt {
+    /* width: 120%; */
   }
-  #apolo {
-    right: 10%;
-  }
-  #adam {
-    right: 5%;
-  }
-  #rode {
-    left: 23%;
-    top: 35%;
-  }
-  #zhivchik {
-    left: 5%;
+  .equip-dot {
+    width: 6vw;
+    height: 3vh;
   }
   .equip-dot-popup {
     justify-content: start;
-    width: 85vw;
-    height: 21vh;
+    width: 80vw;
+    height: 23vh;
   }
   .dot-popup-content {
     font-size: 4vh;
@@ -1228,6 +1225,7 @@ input {
     position: relative;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
   }
   .price-wrapper {
     height: 100vh;
@@ -1274,13 +1272,15 @@ input {
   }
   .examples {
     position: relative;
-    height: 90vh;
-    align-items: center;
+    height: 100vh;
+    align-items: end;
     justify-content: center;
     /* gap: 100px; */
   }
   .examples-item-wrapper {
-    height: 85vh;
+    /* margin-top: 5vh; */
+    height: 90vh;
+    justify-content: end;
   }
   .examples-item {
     flex-direction: column;
@@ -1301,12 +1301,18 @@ input {
   .examples-item-spotify {
     width: 85vw;
   }
+  .examples-bg {
+    top: -1vh;
+  }
   .spotify {
     width: 85vw;
     height: 30vh;
   }
   .contacts {
     height: 90vh;
+  }
+  .contacts .headline {
+    visibility: hidden;
   }
   .contacts-items-wrapper {
     /* height: 1270px; */
@@ -1345,6 +1351,7 @@ input {
     padding: 0;
     height: unset;
   }
+
   .contacts-list i,
   .contacts-list li a {
     font-size: 3vh;
@@ -1404,4 +1411,101 @@ input {
   height: 50px;
   width: 80px;
   background-color: #fff;
+}
+
+/* Equip Media */
+@media (max-width: 913px) {
+  #rode {
+    left: 20%;
+    top: 35%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
+}
+@media (max-width: 821px) {
+  #rode {
+    left: 20%;
+    top: 33%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
+}
+@media (max-width: 415px) {
+  .equip-bg,
+  .equip-bg-alt {
+    object-position: -61vw;
+    /* width: 138vw; */
+  }
+  #apolo {
+    right: 2%;
+  }
+  #adam {
+    right: 5%;
+  }
+  #rode {
+    left: 23%;
+    top: 35%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
+}
+@media (max-width: 395px) {
+  .equip-bg,
+  .equip-bg-alt {
+    object-position: -62vw;
+  }
+  #apolo {
+    right: 10%;
+  }
+  #adam {
+    right: 5%;
+  }
+  #rode {
+    left: 23%;
+    top: 35%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
+}
+@media (max-width: 375px) {
+  .equip-bg,
+  .equip-bg-alt {
+    object-position: -45vw;
+  }
+  #apolo {
+    right: 10%;
+  }
+  #adam {
+    right: 5%;
+  }
+  #rode {
+    left: 23%;
+    top: 35%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
+}
+@media (max-width: 360px) {
+  .equip-bg,
+  .equip-bg-alt {
+    object-position: -55vw;
+  }
+  #apolo {
+    right: 10%;
+  }
+  #adam {
+    right: 5%;
+  }
+  #rode {
+    left: 23%;
+    top: 35%;
+  }
+  #zhivchik {
+    left: 5%;
+  }
 }

@@ -3,9 +3,11 @@
 window.addEventListener("DOMContentLoaded", () => {
   // Preloader
   const preloader = document.querySelector(".preloader"),
+    price = document.querySelector(".price"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
     intro = document.querySelector(".intro");
   let arr = [...preloaderItems];
+
   arr.forEach((item) => {
     let sum = 300 + 300 * +arr.indexOf(item);
     console.log(sum);
