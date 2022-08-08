@@ -997,6 +997,9 @@ input {
   .nav-wrapper {
     padding: 0 2vw;
   }
+  .switcher-tooltip {
+    display: none;
+  }
   nav {
   }
   nav ul {
@@ -1174,8 +1177,8 @@ input {
     /* width: 120%; */
   }
   .equip-dot {
-    width: 6vw;
-    height: 3vh;
+    width: 25px;
+    height: 25px;
   }
   .equip-dot-popup {
     justify-content: start;
@@ -1188,8 +1191,6 @@ input {
   }
   #apolo .dot-popup-headline {
     font-size: 2vh;
-  }
-  #adam .equip-dot-popup {
   }
   .slider-next,
   .slider-prev {
