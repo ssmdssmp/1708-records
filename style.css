@@ -305,6 +305,9 @@ nav li:hover {
   color: var(--main-color);
   text-shadow: 1px 0px rgb(0, 0, 0);
 }
+#adress {
+  cursor: pointer;
+}
 .intro-content-buttons {
   display: flex;
   gap: 50px;
@@ -864,7 +867,7 @@ li.slick-active button {
 .contacts-info {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 12vh;
   justify-content: space-between;
 }
 .contacts-list {
@@ -898,8 +901,13 @@ li.slick-active button {
   transition: color 0.3s ease-in-out;
   cursor: pointer;
 }
+
 .contacts-list a:hover {
   color: var(--main-color);
+}
+#hours:hover {
+  cursor: default;
+  color: white;
 }
 .contacts-list img {
   height: 25px;
@@ -990,7 +998,7 @@ input {
 .work-hours span {
   display: block;
 }
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
   .fp-overflow.fp-table {
     display: unset;
   }
@@ -1008,7 +1016,7 @@ input {
     bottom: 0;
     margin-right: unset;
     margin-left: 15px;
-    font-size: 30px;
+    font-size: 20px;
     text-transform: unset;
     padding: unset;
     display: none;
@@ -1027,11 +1035,13 @@ input {
     display: block;
     /* justify-content: center; */
     align-items: center;
-    height: 30px;
+    height: 24px;
     width: 32px;
+    margin-right: 1vw;
   }
+
   .headlines {
-    padding-left: 5vw;
+    padding-left: 3vw;
     width: 70vw;
     justify-content: end;
     align-items: start;
@@ -1046,7 +1056,7 @@ input {
     display: block;
   }
   #nav-icon1 {
-    width: 32px;
+    width: 25px;
     height: 50px;
     position: relative;
     top: 0;
@@ -1066,7 +1076,7 @@ input {
   #nav-icon4 span {
     display: block;
     position: absolute;
-    height: 5px;
+    height: 2px;
     width: 100%;
     background: #ffffff;
     border-radius: 9px;
@@ -1087,11 +1097,11 @@ input {
   }
 
   #nav-icon1 span:nth-child(2) {
-    top: 12px;
+    top: 9px;
   }
 
   #nav-icon1 span:nth-child(3) {
-    top: 24px;
+    top: 18px;
   }
 
   #nav-icon1.open span:nth-child(1) {
@@ -1141,12 +1151,13 @@ input {
   }
   #next,
   #prev {
-    top: 30vh;
+    display: none;
+    /* top: 30vh;
     width: fit-content;
     height: fit-content;
 
     opacity: 0.3;
-    padding: 0 1vw;
+    padding: 0 1vw; */
   }
   #next i,
   #prev i {
@@ -1160,7 +1171,7 @@ input {
     display: block;
     color: white;
     bottom: 8vh;
-    font-size: 6vh;
+    font-size: 5vh;
   }
   .line span {
     color: var(--main-color);
@@ -1356,6 +1367,9 @@ input {
   .contacts-list i,
   .contacts-list li a {
     font-size: 3vh;
+  }
+  .contacts-info {
+    gap: 3vh;
   }
   .contacts-form {
     width: 100%;

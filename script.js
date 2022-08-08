@@ -7,9 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     preloaderItems = preloader.querySelectorAll(".pre-items"),
     intro = document.querySelector(".intro");
   let arr = [...preloaderItems];
-
   arr.forEach((item) => {
-    let sum = 300 + 300 * +arr.indexOf(item);
+    let sum = 400 + 400 * (+arr.indexOf(item) + 1);
     console.log(sum);
     setTimeout(() => {
       item.animate([{ opacity: "100%" }, { opacity: "0%" }], {
@@ -19,24 +18,26 @@ window.addEventListener("DOMContentLoaded", () => {
     }, sum);
   });
   const nav = document.querySelector("nav");
+
   window.addEventListener("load", () => {
     nav.animate([{ opacity: "100%" }], {
-      delay: 300,
+      delay: 1800,
       duration: 1800,
       fill: "forwards",
     });
     intro.animate([{ opacity: "100%" }], {
-      delay: 300,
+      delay: 1800,
       duration: 1800,
       fill: "forwards",
     });
-    preloader.animate([{ opacity: "100%" }, { delay: 300, opacity: "0%" }], {
-      duration: 1500,
+    preloader.animate([{ opacity: "100%" }, { opacity: "0%" }], {
+      delay: 1000,
+      duration: 1800,
       fill: "forwards",
     });
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 1800);
+    }, 2500);
     // Slider
     $(".slider").slick({
       centerMode: true,
@@ -109,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
         switcherBulb.style.filter = "invert(0)";
         switcher.style.backgroundColor = "white";
-        equipHeadline.style.textShadow = " 0 0 5px #fff";
+        equipHeadline.style.textShadow = "unset";
       } else {
         equipBgDark.animate([{ opacity: 1 }], {
           duration: 500,
@@ -125,9 +126,9 @@ window.addEventListener("DOMContentLoaded", () => {
           "text-shadow: 0 0 5px #fff, 0 0 20px rgb(121, 86, 238),0 0 40px rgb(121, 86, 238), 0 0 80px rgb(121, 86, 238), 0 0 90px rgb(121, 86, 238), 0 0 100px rgb(121, 86, 238), 0 0 150px rgb(121, 86, 238);";
       }
     }
+    let animated = false;
     switcher.addEventListener("click", () => {
       night = !night;
-      console.log(night);
       changeTheme();
     });
     //Fullpage
@@ -139,6 +140,7 @@ window.addEventListener("DOMContentLoaded", () => {
       navigationPosition: "left",
       scrollOverflow: true,
       dragAndMove: "fingersonly",
+      touchSensitivity: 15,
       normalScrollElements: ".price-card-wrapper",
       onLeave: function (index, direction) {
         let sections = document.querySelectorAll(".section");
@@ -205,17 +207,12 @@ window.addEventListener("DOMContentLoaded", () => {
           });
         });
         if (index.index === 2) {
-          equipBgDark.animate([{ opacity: 0 }], {
-            duration: 500,
-            fill: "forwards",
-          });
-          equipBgLight.animate([{ opacity: 1 }], {
-            duration: 500,
-            fill: "forwards",
-          });
-          switcher.style.backgroundColor = "black";
-          switcherBulb.style.filter = "invert(1)";
-          equipHeadline.style.textShadow = " 0 0 5px #fff";
+          if (animated == false) {
+            animated = true;
+            changeTheme();
+          } else {
+            return;
+          }
         }
       },
     });
@@ -392,7 +389,12 @@ window.addEventListener("DOMContentLoaded", () => {
       priceImgAnimation.cancel();
     });
   });
-
+  const priceButtons = document.querySelectorAll(".price-card button"),
+    priceContacts = document.querySelector("#contacts-price");
+  console.log(priceContacts);
+  priceButtons.forEach((item) => {
+    item.addEventListener("click", () => {});
+  });
   // Navigation
 
   const navItems = document.querySelectorAll("nav ul li"),
@@ -409,8 +411,7 @@ window.addEventListener("DOMContentLoaded", () => {
   logo.addEventListener("click", () => {
     document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
   });
-  // const   navItems = document.querySelectorAll('nav ul li'),
-  //         navArr = [...navItems];
+  const adress = document.querySelector("#adress");
   navArr.forEach((item) => {
     item.addEventListener("click", (e) => {
       console.log(fullpage_api.getActiveSection());
@@ -422,6 +423,9 @@ window.addEventListener("DOMContentLoaded", () => {
         ? fullpage_api.moveTo(4)
         : console.log("1");
     });
+  });
+  adress.addEventListener("click", () => {
+    fullpage_api.moveTo(6);
   });
   const orderButton = document.querySelector(".intro-content-buttons button"),
     contactsIntro = document.querySelector("#contacts-intro"),
@@ -512,7 +516,7 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerActive = !burgerActive;
     if (burgerActive == true) {
       navBurger.setAttribute("class", "open");
-      nav.animate([{ height: "250px" }], { duration: 200, fill: "forwards" });
+      nav.animate([{ height: "200px" }], { duration: 200, fill: "forwards" });
       navUl.style.display = "flex ";
     } else {
       navBurger.removeAttribute("class", "open");
