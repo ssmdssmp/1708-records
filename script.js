@@ -391,7 +391,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   const priceButtons = document.querySelectorAll(".price-card button"),
     priceContacts = document.querySelector("#contacts-price");
-  console.log(priceContacts);
   priceButtons.forEach((item) => {
     item.addEventListener("click", () => {});
   });

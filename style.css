@@ -456,8 +456,7 @@ li.slick-active button {
   position: absolute;
   bottom: 0;
 }
-#equip-headline {
-}
+
 .equip-mode-switcher {
   position: absolute;
   z-index: 3;
@@ -1008,8 +1007,6 @@ input {
   .switcher-tooltip {
     display: none;
   }
-  nav {
-  }
   nav ul {
     z-index: 15;
     position: absolute;
@@ -1175,17 +1172,6 @@ input {
   }
   .line span {
     color: var(--main-color);
-  }
-  .equip {
-    /* overflow: auto; */
-    /* touch-action: pan-x; */
-  }
-  /* .equip-content {
-    background-position: -50vw;
-  } */
-  .equip-bg,
-  .equip-bg-alt {
-    /* width: 120%; */
   }
   .equip-dot {
     width: 25px;
