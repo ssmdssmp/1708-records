@@ -131,6 +131,71 @@ window.addEventListener("DOMContentLoaded", () => {
       night = !night;
       changeTheme();
     });
+    const orderButton = document.querySelector(".intro-content-buttons button"),
+      contactsIntro = document.querySelector("#contacts-intro"),
+      introContent = document.querySelector(".intro-content"),
+      closePopup = document.querySelector("#close-popup");
+    let orderOpen = false;
+    orderButton.addEventListener("click", () => {
+      console.log(contactsIntro.children);
+      orderOpen = !orderOpen;
+      if (orderOpen) {
+        if (window.innerWidth > 500) {
+          contactsIntro.animate([{ right: "0px" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+          navItems.forEach((item) => {
+            item.animate([{ opacity: "0%" }], {
+              duration: 200,
+              fill: "forwards",
+            });
+          });
+        } else {
+          console.log("small");
+          contactsIntro.style.width = "100%";
+          contactsIntro.animate([{ right: "0px" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+          nav.style.display = "none";
+        }
+      } else {
+        contactsIntro.animate([{ right: "-500px" }], {
+          duration: 200,
+          fill: "forwards",
+        });
+        navItems.forEach((item) => {
+          item.animate([{ opacity: "100%" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+        });
+      }
+    });
+    const priceButtons = document.querySelectorAll(".price-card button"),
+      priceNoClick = document.querySelector(".price-no-click");
+    priceNoClick.addEventListener("click", () => {
+      contactsIntro.animate([{ right: "-500px" }], {
+        duration: 300,
+        fill: "forwards",
+      });
+      !orderOpen;
+    });
+    priceButtons.forEach((item) => {
+      item.addEventListener("click", () => {
+        !orderOpen
+          ? contactsIntro.animate([{ right: "0px" }], {
+              duration: 200,
+              fill: "forwards",
+            })
+          : contactsIntro.animate([{ right: "-500px" }], {
+              duration: 200,
+              fill: "forwards",
+            });
+        orderOpen = !orderOpen;
+      });
+    });
     //Fullpage
     new fullpage("#fullpage", {
       autoScrolling: true,
@@ -190,6 +255,8 @@ window.addEventListener("DOMContentLoaded", () => {
               duration: 1500,
               fill: "forwards",
             })
+          : direction.index === 5
+          ? contactsIntro.removeAttribute("id")
           : nav.animate([{ backgroundColor: "rgba(0,0,0,0.87)" }], {
               duration: 300,
               fill: "forwards",
@@ -275,7 +342,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // Equip Items
   const equip = document.querySelector(".filter"),
     equipDot = document.querySelectorAll(".equip-dot"),
-    equipPopup = document.querySelector(".equip-dot-popup"),
     rode = document.querySelector("#rode");
   let equipArr = [...equipDot];
   let dotActive = false;
@@ -389,11 +455,7 @@ window.addEventListener("DOMContentLoaded", () => {
       priceImgAnimation.cancel();
     });
   });
-  const priceButtons = document.querySelectorAll(".price-card button"),
-    priceContacts = document.querySelector("#contacts-price");
-  priceButtons.forEach((item) => {
-    item.addEventListener("click", () => {});
-  });
+
   // Navigation
 
   const navItems = document.querySelectorAll("nav ul li"),
@@ -426,48 +488,7 @@ window.addEventListener("DOMContentLoaded", () => {
   adress.addEventListener("click", () => {
     fullpage_api.moveTo(6);
   });
-  const orderButton = document.querySelector(".intro-content-buttons button"),
-    contactsIntro = document.querySelector("#contacts-intro"),
-    introContent = document.querySelector(".intro-content"),
-    closePopup = document.querySelector("#close-popup");
-  let orderOpen = false;
-  orderButton.addEventListener("click", () => {
-    console.log(contactsIntro.children);
-    orderOpen = !orderOpen;
-    if (orderOpen) {
-      if (window.innerWidth > 500) {
-        contactsIntro.animate([{ right: "0px" }], {
-          duration: 200,
-          fill: "forwards",
-        });
-        navItems.forEach((item) => {
-          item.animate([{ opacity: "0%" }], {
-            duration: 200,
-            fill: "forwards",
-          });
-        });
-      } else {
-        console.log("small");
-        contactsIntro.style.width = "100%";
-        contactsIntro.animate([{ right: "0px" }], {
-          duration: 200,
-          fill: "forwards",
-        });
-        nav.style.display = "none";
-      }
-    } else {
-      contactsIntro.animate([{ right: "-500px" }], {
-        duration: 200,
-        fill: "forwards",
-      });
-      navItems.forEach((item) => {
-        item.animate([{ opacity: "100%" }], {
-          duration: 200,
-          fill: "forwards",
-        });
-      });
-    }
-  });
+
   intro.addEventListener("click", (e) => {
     console.log(e.target);
     if (

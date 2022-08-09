@@ -71,90 +71,86 @@
       <div class="zoomButton" data-type="next" data-root=".zoomViewport"></div>
     </div> -->
     </nav>
+    <div
+      class="contacts-info"
+      id="contacts-intro"
+      style="
+        z-index: 2000;
+        position: fixed;
+        top: 0;
+        right: -500px;
+        height: 100vh;
+        flex-direction: column-reverse;
+        justify-content: start;
+        gap: 20px;
+        background-color: black;
+      "
+    >
+      <i class="fa-solid fa-xmark" id="close-popup"></i>
+      <ul
+        class="contacts-list"
+        style="
+          flex-direction: column-reverse;
+          justify-content: end;
+          gap: 30px;
+          margin-top: 50px;
+        "
+      >
+        <li
+          style="
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: flex-start;
+          "
+        >
+          <i class="fa-solid fa-calendar-week" style="font-size: 20px"></i>
+          <a href="#" style="font-size: 20px">
+            Пн-Пт: 10:00-23:00 /
+            <span
+              style="
+                margin-top: 25px;
+                font-size: 20px;
+                display: unset;
+                color: var(--main-color);
+              "
+              >Сб-Вс:10:00-16:00</span
+            >
+          </a>
+        </li>
+        <li>
+          <i class="fa-brands fa-instagram"></i>
+          <a target="_blank" href="https://www.instagram.com/guber.rrr/"
+            >instagram.com/guber.rrr</a
+          >
+        </li>
+        <li>
+          <i class="fa-brands fa-telegram"></i>
+          <a target="_blank" href="https://t.me/rapipesni">t.me/rapipesni</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-square-phone"></i>
+          <a style="color: var(--main-color)" href="tel:+380506511755"
+            >+ 380 50 651 1755
+          </a>
+        </li>
+      </ul>
+      <div class="contacts-form" style="margin-top: 100px">
+        <div class="contacts-form-title">
+          заполните форму,
+          <span>мы свяжемся с вами в ближайшее время</span>
+        </div>
+        <input type="text" placeholder="Ваше имя" id="name" />
+        <input type="text" placeholder="Номер телефона" id="tel" />
+        <img src="assets/spinner.svg" id="spinner" alt="" />
+        <i class="fa-solid fa-circle-check" id="success"></i>
+        <button class="submit" id="submit">Отправить</button>
+      </div>
+    </div>
     <div id="fullpage">
       <div class="section">
         <div class="intro" id="intro">
-          <div
-            class="contacts-info"
-            id="contacts-intro"
-            style="
-              position: absolute;
-              top: 0;
-              right: -500px;
-              height: 100vh;
-              flex-direction: column-reverse;
-              justify-content: start;
-              gap: 20px;
-              background-color: black;
-            "
-          >
-            <i class="fa-solid fa-xmark" id="close-popup"></i>
-            <ul
-              class="contacts-list"
-              style="
-                flex-direction: column-reverse;
-                justify-content: end;
-                gap: 30px;
-                margin-top: 50px;
-              "
-            >
-              <li
-                style="
-                  margin-top: 20px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: start;
-                  align-items: flex-start;
-                "
-              >
-                <i
-                  class="fa-solid fa-calendar-week"
-                  style="font-size: 20px"
-                ></i>
-                <a href="#" style="font-size: 20px">
-                  Пн-Пт: 10:00-23:00 /
-                  <span
-                    style="
-                      margin-top: 25px;
-                      font-size: 20px;
-                      display: unset;
-                      color: var(--main-color);
-                    "
-                    >Сб-Вс:10:00-16:00</span
-                  >
-                </a>
-              </li>
-              <li>
-                <i class="fa-brands fa-instagram"></i>
-                <a target="_blank" href="https://www.instagram.com/guber.rrr/"
-                  >instagram.com/guber.rrr</a
-                >
-              </li>
-              <li>
-                <i class="fa-brands fa-telegram"></i>
-                <a target="_blank" href="https://t.me/rapipesni"
-                  >t.me/rapipesni</a
-                >
-              </li>
-              <li>
-                <i class="fa-solid fa-square-phone"></i>
-                <a style="color: var(--main-color)" href="tel:+380506511755"
-                  >+ 380 50 651 1755
-                </a>
-              </li>
-            </ul>
-            <div class="contacts-form" style="margin-top: 100px">
-              <div class="contacts-form-title">
-                заполните форму,
-                <span>мы свяжемся с вами в ближайшее время</span>
-              </div>
-              <input type="text" placeholder="Ваше имя" id="name" />
-              <input type="text" placeholder="Номер телефона" id="tel" />
-              <img src="assets/spinner.svg" id="spinner" alt="" />
-              <i class="fa-solid fa-circle-check" id="success"></i>
-              <button class="submit" id="submit">Отправить</button>
-            </div>
-          </div>
           <div class="intro-content">
             <div class="intro-content-text">
               <h1>Студия звукозаписи<span> На Позняках</span></h1>
@@ -302,87 +298,7 @@
         <!-- <div class="headline "></div> -->
         <div class="price" id="price">
           <div class="price-no-click"></div>
-          <div
-            class="contacts-info"
-            id="contacts-price"
-            style="
-              position: absolute;
-              top: 0;
-              right: -500px;
-              height: 100vh;
-              flex-direction: column-reverse;
-              justify-content: start;
-              gap: 20px;
-              background-color: black;
-            "
-          >
-            <i class="fa-solid fa-xmark" id="close-popup"></i>
-            <ul
-              class="contacts-list"
-              style="
-                flex-direction: column-reverse;
-                justify-content: end;
-                gap: 30px;
-                margin-top: 50px;
-              "
-            >
-              <li
-                style="
-                  margin-top: 20px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: start;
-                  align-items: flex-start;
-                "
-              >
-                <i
-                  class="fa-solid fa-calendar-week"
-                  style="font-size: 20px"
-                ></i>
-                <a href="#" style="font-size: 20px">
-                  Пн-Пт: 10:00-23:00 /
-                  <span
-                    style="
-                      margin-top: 25px;
-                      font-size: 20px;
-                      display: unset;
-                      color: var(--main-color);
-                    "
-                    >Сб-Вс:10:00-16:00</span
-                  >
-                </a>
-              </li>
-              <li>
-                <i class="fa-brands fa-instagram"></i>
-                <a target="_blank" href="https://www.instagram.com/guber.rrr/"
-                  >instagram.com/guber.rrr</a
-                >
-              </li>
-              <li>
-                <i class="fa-brands fa-telegram"></i>
-                <a target="_blank" href="https://t.me/rapipesni"
-                  >t.me/rapipesni</a
-                >
-              </li>
-              <li>
-                <i class="fa-solid fa-square-phone"></i>
-                <a style="color: var(--main-color)" href="tel:+380506511755"
-                  >+ 380 50 651 1755
-                </a>
-              </li>
-            </ul>
-            <div class="contacts-form" style="margin-top: 100px">
-              <div class="contacts-form-title">
-                заполните форму,
-                <span>мы свяжемся с вами в ближайшее время</span>
-              </div>
-              <input type="text" placeholder="Ваше имя" id="name" />
-              <input type="text" placeholder="Номер телефона" id="tel" />
-              <img src="assets/spinner.svg" id="spinner" alt="" />
-              <i class="fa-solid fa-circle-check" id="success"></i>
-              <button class="submit" id="submit">Отправить</button>
-            </div>
-          </div>
+
           <iframe
             width="100%"
             class="price-bg"
@@ -589,58 +505,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="script.js"></script>
-    <script>
-      // const equipDots = document.querySelectorAll('.equip-dot'),
-      //       filter = document.querySelector('.filter'),
-      //       equipPop = document.querySelectorAll('.equip-dot-popup'),
-      //       equipPopArr = [...equipPop],
-      //      dotsArr = [...equipDots];
-      // let index = undefined,
-      //      isZoomed = false;
-      //      dotsArr.forEach(item =>{
-      //   item.addEventListener('click',(e)=>{
-      //         isZoomed = true;
-      //         index = +e.target.getAttribute('data-index');
-      //         console.log(index);
-      //         equipDots[index-1].style.visibility ='hidden';
-      //       })
-      //      })
-      //   $(document).ready(function() {
-      // $(".equip-dot").zoomTarget({
-      //   closeclick: true,
-      //   duration:900,
-      //   targetsize:0.05,
-      //   root: $('.zoomViewport'),
-      //   scalemode:'height',
-      //   animationendcallback: function(){
-      //     isZoomed = true;
-      //     console.log(index);
-      //     console.log(isZoomed);
-      //     equipPopArr[index-1].style.display ='flex';
-      //     equipPopArr[index-1].style.visibility ='initial';
-      //     setTimeout(()=>{
-      //       equipPopArr[index-1].animate([{opacity:'1'}],{duration:300,fill:"forwards"});
-      //     },1)
-      //   }
-      // });
-
-      //     filter.addEventListener('click', () =>{
-      //        isZoomed = false;
-      //        equipPopArr.forEach(item =>{
-      //         item.animate([{opacity:'0'}],{duration:300,fill:"forwards"});
-      //        setTimeout(()=>{
-      //          item.style.visibility ='hidden';
-      //           item.parentElement.style.visibility ='initial';
-      //         },1)
-      //      })
-      //        })
-
-      //     $(".zoom-button").click(function(evt) {
-      //         $(this).zoomTo({targetsize:0.75, duration:600, closeclick:true});
-      //         evt.stopPropagation();
-
-      // });
-      // });
-    </script>
+    <script></script>
   </body>
 </html>
