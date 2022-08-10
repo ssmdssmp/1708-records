@@ -131,11 +131,12 @@ window.addEventListener("DOMContentLoaded", () => {
       night = !night;
       changeTheme();
     });
+    let orderOpen = false;
     const orderButton = document.querySelector(".intro-content-buttons button"),
       contactsIntro = document.querySelector("#contacts-intro"),
       introContent = document.querySelector(".intro-content"),
       closePopup = document.querySelector("#close-popup");
-    let orderOpen = false;
+
     orderButton.addEventListener("click", () => {
       console.log(contactsIntro.children);
       orderOpen = !orderOpen;
@@ -196,6 +197,42 @@ window.addEventListener("DOMContentLoaded", () => {
         orderOpen = !orderOpen;
       });
     });
+    intro.addEventListener("click", (e) => {
+      console.log(e.target);
+      if (
+        (orderOpen && e.target != orderButton && e.target === intro) ||
+        e.target === introContent
+      ) {
+        orderOpen = false;
+        contactsIntro.animate([{ right: "-500px" }], {
+          duration: 200,
+          fill: "forwards",
+        });
+        navItems.forEach((item) => {
+          item.animate([{ opacity: "100%" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+        });
+      }
+      closePopup.addEventListener("click", () => {
+        console.log(orderOpen);
+        orderOpen = false;
+        contactsIntro.animate([{ right: "-500px" }], {
+          duration: 200,
+          fill: "forwards",
+        });
+        nav.style.display = "flex";
+      });
+    });
+    // To Top Button
+    window.addEventListener("scroll", () => {
+      if (intro.getBoundingClientRect().top < -500) {
+        toTopButton.style.display = "flex";
+      } else {
+        toTopButton.style.display = "none";
+      }
+    });
     //Fullpage
     new fullpage("#fullpage", {
       autoScrolling: true,
@@ -255,8 +292,6 @@ window.addEventListener("DOMContentLoaded", () => {
               duration: 1500,
               fill: "forwards",
             })
-          : direction.index === 5
-          ? contactsIntro.removeAttribute("id")
           : nav.animate([{ backgroundColor: "rgba(0,0,0,0.87)" }], {
               duration: 300,
               fill: "forwards",
@@ -298,47 +333,44 @@ window.addEventListener("DOMContentLoaded", () => {
     //Telegram Post (Send Message) Request
     const telegramToken = "5047013850:AAExDJksx6jmAqdZwnX6bBYI_mBG-avC0rg",
       chatId = "-1001616261182",
-      submitButton = document.getElementById("submit"),
-      nameInput = document.querySelector("#name"),
-      telInput = document.querySelector("#tel"),
-      spinner = document.querySelector("#spinner"),
-      success = document.querySelector("#success"),
-      formTitle = document.querySelector(".contacts-form-title");
-    submitButton.addEventListener("click", (e) => {
-      let name = nameInput.value,
-        tel = telInput.value;
-      nameInput.style.display = "none";
-      telInput.style.display = "none";
-      spinner.style.display = "flex";
-      spinner.style.marginBottom = "90px";
-      success.style.marginBottom = "90px";
-      submitButton.style.display = "none";
-      if (name != "" && tel != "") {
-        //make more!!
-        axios
-          .post(
-            `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${name} ${tel}`
-          )
-          .then(function (response) {
-            spinner.style.display = "none";
-            success.style.display = "block";
-            formTitle.innerHTML = "Спасибо! <span>Ваша заявка принята</span>";
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      } else {
-        console.log(3);
-      }
+      submitButtons = [...document.querySelectorAll(".submit")],
+      nameInputs = document.querySelectorAll(".name"),
+      telInputs = document.querySelectorAll(".tel"),
+      spinner = document.querySelectorAll(".spinner"),
+      formTitle = document.querySelectorAll(".contacts-form-title"),
+      success = document.querySelectorAll(".success");
+    submitButtons.forEach((item) => {
+      item.addEventListener("click", () => {
+        let index = submitButtons.indexOf(item),
+          tel = telInputs[index].value,
+          name = nameInputs[index].value;
+        nameInputs[index].style.display = "none";
+        telInputs[index].style.display = "none";
+        spinner[index].style.display = "flex";
+        spinner[index].style.marginBottom = "90px";
+        // success[index].style.marginBottom = "90px";
+        submitButtons[index].style.display = "none";
+        if (name != "" && tel != "") {
+          axios
+            .post(
+              `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${name} ${tel}`
+            )
+            .then(function (response) {
+              spinner[index].style.display = "none";
+              success[index].style.display = "block";
+              formTitle[index].innerHTML =
+                "Спасибо! <span>Ваша заявка принята</span>";
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        } else {
+          console.log(3);
+        }
+      });
     });
   });
-  // 1708 Line
-  // const   line =document.querySelector(".line");
-  // window.onscroll = () =>{
-  //     let pos = window.scrollY;
-  //     console.log(line.style.right);
-  //     line.style.right =`${pos-1000}px`;
-  // };
+
   // Equip Items
   const equip = document.querySelector(".filter"),
     equipDot = document.querySelectorAll(".equip-dot"),
@@ -487,45 +519,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   adress.addEventListener("click", () => {
     fullpage_api.moveTo(6);
-  });
-
-  intro.addEventListener("click", (e) => {
-    console.log(e.target);
-    if (
-      (orderOpen && e.target != orderButton && e.target === intro) ||
-      e.target === introContent
-    ) {
-      orderOpen = false;
-      contactsIntro.animate([{ right: "-500px" }], {
-        duration: 200,
-        fill: "forwards",
-      });
-      navItems.forEach((item) => {
-        item.animate([{ opacity: "100%" }], {
-          duration: 200,
-          fill: "forwards",
-        });
-      });
-    }
-    closePopup.addEventListener("click", () => {
-      orderOpen = false;
-      contactsIntro.animate([{ right: "-500px" }], {
-        duration: 200,
-        fill: "forwards",
-      });
-      nav.style.display = "flex";
-    });
-  });
-  // To Top Button
-  window.addEventListener("scroll", () => {
-    if (intro.getBoundingClientRect().top < -500) {
-      toTopButton.style.display = "flex";
-    } else {
-      toTopButton.style.display = "none";
-    }
-  });
-  toTopButton.addEventListener("click", () => {
-    intro.scrollIntoView({ behavior: "smooth" });
   });
   // Nav Burger
   const navBurger = document.querySelector("#nav-icon1"),

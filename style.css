@@ -14,40 +14,12 @@ body {
   background-color: black;
   font-family: "Lato", sans-serif;
 }
-.to-top {
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border: 1px solid var(--main-color);
-  border-radius: 3px;
-  background-color: black;
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
-  z-index: 10;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-  color: var(--main-color);
-  font-size: 30px;
-}
-.to-top:hover {
-  background-color: var(--main-color);
-  color: white;
-  font-size: 35px;
-}
-#to-top {
-  transition: 0.3s;
-
-  font-size: 30px;
-}
 #close-popup {
   display: none;
   cursor: pointer;
   position: absolute;
-  right: 35px;
-  top: 15px;
+  right: 5vw;
+  top: 5vh;
   color: var(--main-color);
   font-size: 50px;
 }
@@ -62,12 +34,9 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  /* transition:1s;     */
 }
 .preloader div {
   opacity: 0;
-
-  /* transition:0.5s; */
 }
 .preloader div span {
   color: var(--main-color);
@@ -76,7 +45,6 @@ body {
   opacity: 1;
 }
 .main {
-  /* overflow: hidden; */
   display: none;
 }
 .nav-wrapper {
@@ -92,17 +60,12 @@ nav {
   opacity: 0;
   backdrop-filter: blur(4px) saturate(180%);
   -webkit-backdrop-filter: blur(4px) saturate(180%);
-  /* background-color: rgba(121, 86, 238,); */
   background-color: rgba(0, 0, 0, 0);
   z-index: 15;
   position: fixed;
   top: 0;
   height: 10vh;
   width: 100vw;
-  /* display: flex;
-  color: white;
-  justify-content: space-between; */
-  /* padding: 0px 5vw; */
   overflow: hidden;
 }
 .burger {
@@ -168,10 +131,7 @@ nav {
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
-
-#nav-icon1 span,
-#nav-icon3 span,
-#nav-icon4 span {
+#nav-icon1 span {
   display: block;
   position: absolute;
   height: 5px;
@@ -243,7 +203,6 @@ nav li:hover {
   align-items: center;
   font-size: 5vh;
   font-weight: 700;
-  /* margin-left:50px; */
   transition: color 0.3s linear;
 }
 .logo span {
@@ -258,7 +217,6 @@ nav li:hover {
 }
 .logo:hover span {
   color: white;
-  /* box-shadow: 1px 2px rgba(64, 18, 215, 0.6);  */
 }
 .intro {
   opacity: 0;
@@ -357,7 +315,6 @@ nav li:hover {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: end;
-  /* align-items: center; */
 }
 .slider {
   position: relative;
@@ -379,7 +336,6 @@ nav li:hover {
   height: 70vh;
 }
 .slick-center {
-  /* filter: brightness(100%); */
   z-index: 3;
   transition: 0.3s ease-in-out;
   opacity: 1;
@@ -462,7 +418,6 @@ li.slick-active button {
   z-index: 3;
   height: 48px;
   width: 48px;
-  /* background-color: white; */
   margin-left: 90%;
   top: 8vh;
   right: 3vw;
@@ -482,7 +437,6 @@ li.slick-active button {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0,0,0,0.75); */
 }
 .equip-bg {
   position: absolute;
@@ -492,12 +446,10 @@ li.slick-active button {
   object-fit: cover;
 }
 .equip-content {
-  /* background-image: url('assets/equip_alt.webp'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  /* width: 100%; */
   position: relative;
 }
 .equip-dot {
@@ -573,7 +525,6 @@ li.slick-active button {
   backdrop-filter: blur(20px) saturate(0%);
   -webkit-backdrop-filter: blur(20px) saturate(0%);
   background-color: rgba(121, 86, 238, 0.57);
-  /* display: flex; */
   justify-content: space-between;
   padding: 1vh 1vw;
   border-radius: 2px;
@@ -689,14 +640,12 @@ li.slick-active button {
 }
 .price-card {
   z-index: 3;
-  /* display: none; */
   color: white;
   backdrop-filter: blur(25px) saturate(200%);
   -webkit-backdrop-filter: blur(25px) saturate(200%);
   background-color: rgba(121, 86, 238, 0.6);
   border-radius: 12px;
   border: 1px solid rgba(121, 86, 238, 0.2);
-  /* border:1px solid black; */
   width: 320px;
   height: 500px;
   border-radius: 4px;
@@ -724,7 +673,6 @@ li.slick-active button {
 .price-card-img {
   width: 80px;
   height: 80px;
-  /* border:1px solid white; */
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -761,14 +709,11 @@ li.slick-active button {
   font-size: 50px;
   text-transform: uppercase;
   display: flex;
-  /* position:static; */
   justify-content: center;
   align-items: center;
   font-weight: 900px;
-  /* padding:20px; */
 }
 .examples {
-  /* height: 750px; */
   height: 90vh;
   width: 100vw;
   display: flex;
@@ -776,13 +721,13 @@ li.slick-active button {
   align-items: center;
 }
 .examples-bg {
-  /* transform: scaleX(-1); */
   position: absolute;
   width: 100vw;
   object-fit: cover;
   height: 100vh;
   z-index: 1;
   filter: grayscale(80%);
+  bottom: 0;
 }
 .examples-item-wrapper {
   height: 78vh;
@@ -840,7 +785,6 @@ li.slick-active button {
   align-items: center;
   height: 90vh;
   gap: 4vh;
-  /* flex-wrap: wrap; */
 }
 .fp-watermark {
   display: none;
@@ -854,7 +798,6 @@ li.slick-active button {
   gap: 1vh;
   width: 60vw;
   height: 84vh;
-  /* height: 500px; */
 }
 .contacts-map-adress {
   text-transform: uppercase;
@@ -875,7 +818,6 @@ li.slick-active button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* text-transform: uppercase; */
   list-style: none;
   font-size: 3vh;
   height: 280px;
@@ -891,7 +833,6 @@ li.slick-active button {
 .contacts-list li {
   display: flex;
   align-items: center;
-  /* align-content: center; */
 }
 .contacts-list a {
   margin-left: 10px;
@@ -922,16 +863,12 @@ li.slick-active button {
 }
 
 .contacts-form {
-  /* margin: 20px 0px 0px 0px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5vh;
   justify-content: start;
-  /* justify-content: center; */
   width: 500px;
-  /* height: 300px; */
-  /* border:1px solid white; */
 }
 .contacts-form-title {
   font-size: 26px;
@@ -941,6 +878,7 @@ li.slick-active button {
   flex-direction: column;
   align-items: center;
   margin: bottom 10px;
+  color: white;
 }
 .contacts-form-title span {
   display: block;
@@ -948,10 +886,7 @@ li.slick-active button {
   margin-top: 15px;
 }
 input {
-  /* text-transform: uppercase; */
-
   font-size: 15px;
-  /* margin:30px auto 0px auto; */
   display: block;
   height: 50px;
   width: 400px;
@@ -971,17 +906,28 @@ input {
   text-transform: uppercase;
   width: 400px;
   height: 50px;
-  /* margin-top:30px; */
 }
 input {
   padding: 15px;
 }
-#spinner {
+#contacts-intro {
+  right: -100%;
+  padding: 2vh 2vw;
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  flex-direction: column-reverse;
+  justify-content: start;
+  gap: 20px;
+  background-color: black;
+}
+.spinner {
   width: 100px;
   height: 100px;
   display: none;
 }
-#success {
+.success {
   display: none;
   font-size: 100px;
   color: var(--main-color);
@@ -1022,7 +968,6 @@ input {
     align-items: start;
     gap: 20px;
     width: 100%;
-    /* height: 90px; */
   }
   #fp-nav {
     display: none !important;
@@ -1030,7 +975,6 @@ input {
   .burger {
     z-index: 22;
     display: block;
-    /* justify-content: center; */
     align-items: center;
     height: 24px;
     width: 32px;
@@ -1068,9 +1012,7 @@ input {
     cursor: pointer;
   }
 
-  #nav-icon1 span,
-  #nav-icon3 span,
-  #nav-icon4 span {
+  #nav-icon1 span {
     display: block;
     position: absolute;
     height: 2px;
@@ -1149,12 +1091,6 @@ input {
   #next,
   #prev {
     display: none;
-    /* top: 30vh;
-    width: fit-content;
-    height: fit-content;
-
-    opacity: 0.3;
-    padding: 0 1vw; */
   }
   #next i,
   #prev i {
@@ -1237,11 +1173,8 @@ input {
     overflow-x: visible;
     justify-content: start;
     width: 85vw;
-    /* width: 100vw; */
   }
   .price-card {
-    /* gap: 3vh; */
-    /* padding: 3vh 5vw; */
     width: fit-content;
     height: fit-content;
   }
@@ -1273,10 +1206,8 @@ input {
     height: 100vh;
     align-items: end;
     justify-content: center;
-    /* gap: 100px; */
   }
   .examples-item-wrapper {
-    /* margin-top: 5vh; */
     height: 90vh;
     justify-content: end;
   }
@@ -1313,7 +1244,6 @@ input {
     visibility: hidden;
   }
   .contacts-items-wrapper {
-    /* height: 1270px; */
     flex-direction: column-reverse;
     gap: 2vh;
   }
@@ -1321,7 +1251,6 @@ input {
     height: 30vh;
   }
   .map {
-    /* margin-top: 50px; */
     width: 95vw;
     height: 27vh;
   }
@@ -1366,9 +1295,7 @@ input {
   .examples-headline {
     font-size: 40px;
   }
-  #contacts-intro {
-    right: -100%;
-  }
+
   #close-popup {
     display: block;
   }
@@ -1395,9 +1322,6 @@ input {
 .section:nth-child(1) {
   opacity: 1;
 }
-/* #fp-nav ul li a, #fp-nav ul li a span{
-    background-color:var(--main-color);
-} */
 .zoom-nav {
   z-index: 20;
   background-color: black;
@@ -1437,7 +1361,6 @@ input {
   .equip-bg,
   .equip-bg-alt {
     object-position: -61vw;
-    /* width: 138vw; */
   }
   #apolo {
     right: 2%;
