@@ -2,6 +2,9 @@
 
 window.addEventListener("DOMContentLoaded", () => {
   // Preloader
+  document.body.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
   const preloader = document.querySelector(".preloader"),
     price = document.querySelector(".price"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
@@ -136,6 +139,12 @@ window.addEventListener("DOMContentLoaded", () => {
       contactsIntro = document.querySelector("#contacts-intro"),
       introContent = document.querySelector(".intro-content"),
       closePopup = document.querySelector("#close-popup");
+    closePopup.addEventListener("click", () => {
+      contactsIntro.animate([{ right: "-100%" }], {
+        duration: 200,
+        fill: "forwards",
+      });
+    });
     contactsIntro.style.visibility = "initial";
     orderButton.addEventListener("click", () => {
       console.log(contactsIntro.children);
