@@ -265,7 +265,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //Fullpage
     new fullpage("#fullpage", {
       responsiveWidth: 500,
-      autoScrolling: true,
+      autoScrolling: false,
       navigation: true,
       scrollHorizontally: true,
       fitToSection: true,
