@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
 :root {
   --main-color: rgba(121, 86, 238, 1);
 }
@@ -83,6 +84,7 @@ nav {
   overflow: hidden;
 }
 .headlines {
+  cursor: default;
   position: absolute;
   top: 0;
   width: 35vw;
@@ -277,13 +279,14 @@ nav li:hover {
   color: white;
   font-size: 19px;
   border-radius: 2px;
+}
+.intro-content-buttons button:nth-child(2) {
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  transition: 0.4s ease-in-out;
 }
 .intro-content-buttons button:nth-child(1) {
   background-color: var(--main-color);
-  border: 1 px solid var(--main-color);
+  border: none;
 }
 .intro-content-buttons button:hover {
   background-color: var(--main-color);
@@ -697,6 +700,7 @@ li.slick-active button {
   color: white;
 }
 .price-card-desk {
+  padding: 0vh 0.5vw;
   font-weight: 300;
   font-size: 17px;
 }
@@ -784,7 +788,7 @@ li.slick-active button {
   color: white;
   align-items: center;
   height: 90vh;
-  gap: 4vh;
+  gap: 1vh;
 }
 .fp-watermark {
   display: none;
@@ -809,7 +813,7 @@ li.slick-active button {
 .contacts-info {
   display: flex;
   flex-direction: column;
-  gap: 12vh;
+  gap: 14vh;
   justify-content: space-between;
 }
 .contacts-list {
@@ -883,7 +887,7 @@ li.slick-active button {
 .contacts-form-title span {
   display: block;
   font-size: 17px;
-  margin-top: 15px;
+  margin-top: 0.5vh;
 }
 input {
   font-size: 15px;
@@ -920,7 +924,8 @@ input {
   flex-direction: column-reverse;
   justify-content: start;
   gap: 20px;
-  background-color: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .spinner {
   width: 100px;
@@ -942,6 +947,17 @@ input {
 }
 .work-hours span {
   display: block;
+}
+.intro-content-buttons button:nth-child(1),
+.price-card button,
+.submit {
+  transition: 0.3s ease-in-out;
+}
+.intro-content-buttons button:nth-child(1):hover,
+.price-card button:hover,
+.submit:hover {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgb(97, 64, 218);
 }
 @media (max-width: 500px) {
   .fp-overflow.fp-table {
@@ -1070,7 +1086,7 @@ input {
     align-items: unset;
   }
   .intro-content {
-    padding: 2vh 3vw;
+    padding: 5vh 3vw;
   }
   .intro {
     background-position: -500px;
@@ -1087,6 +1103,9 @@ input {
   }
   .break-intro-gallery {
     margin: 30px 0px;
+  }
+  #contacts-intro {
+    right: 100vw;
   }
   #next,
   #prev {

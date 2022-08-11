@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", () => {
           nav.style.display = "none";
         }
       } else {
-        contactsIntro.animate([{ right: "-500px" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -174,10 +174,31 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
+    const priceCard = document.querySelectorAll(".price-card");
+
+    priceCard.forEach((item) => {
+      const priceImgAnimation =
+        item.firstElementChild.firstElementChild.animate(
+          [
+            { transform: "translateY(0)" },
+            { transform: "translateY(-5px)" },
+            { transform: "translateY(0)" },
+          ],
+          { duration: 700, fill: "forwards", iterations: Infinity }
+        );
+      priceImgAnimation.pause();
+      item.addEventListener("mouseenter", () => {
+        priceImgAnimation.play();
+      });
+      item.addEventListener("mouseleave", () => {
+        priceImgAnimation.cancel();
+      });
+    });
     const priceButtons = document.querySelectorAll(".price-card button"),
       priceNoClick = document.querySelector(".price-no-click");
+
     priceNoClick.addEventListener("click", () => {
-      contactsIntro.animate([{ right: "-500px" }], {
+      contactsIntro.animate([{ right: "-100%" }], {
         duration: 300,
         fill: "forwards",
       });
@@ -190,7 +211,7 @@ window.addEventListener("DOMContentLoaded", () => {
               duration: 200,
               fill: "forwards",
             })
-          : contactsIntro.animate([{ right: "-500px" }], {
+          : contactsIntro.animate([{ right: "-100%" }], {
               duration: 200,
               fill: "forwards",
             });
@@ -204,7 +225,7 @@ window.addEventListener("DOMContentLoaded", () => {
         e.target === introContent
       ) {
         orderOpen = false;
-        contactsIntro.animate([{ right: "-500px" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -218,7 +239,7 @@ window.addEventListener("DOMContentLoaded", () => {
       closePopup.addEventListener("click", () => {
         console.log(orderOpen);
         orderOpen = false;
-        contactsIntro.animate([{ right: "-500px" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -340,33 +361,42 @@ window.addEventListener("DOMContentLoaded", () => {
       formTitle = document.querySelectorAll(".contacts-form-title"),
       success = document.querySelectorAll(".success");
     submitButtons.forEach((item) => {
-      item.addEventListener("click", () => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
         let index = submitButtons.indexOf(item),
           tel = telInputs[index].value,
           name = nameInputs[index].value;
-        nameInputs[index].style.display = "none";
+        console.log(tel.length);
+        console.log(name);
+        if (
+          name.length < 1 ||
+          (tel.includes("+") && tel.length != 13) ||
+          (!tel.includes("+") && tel.includes("38") && tel.length != 12) ||
+          tel.length < 10
+        ) {
+          formTitle[index].innerHTML =
+            "Ошибка!<span> Проверьте корректность данных</span>";
+          return;
+        } else nameInputs[index].style.display = "none";
         telInputs[index].style.display = "none";
         spinner[index].style.display = "flex";
         spinner[index].style.marginBottom = "90px";
         // success[index].style.marginBottom = "90px";
         submitButtons[index].style.display = "none";
-        if (name != "" && tel != "") {
-          axios
-            .post(
-              `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${name} ${tel}`
-            )
-            .then(function (response) {
-              spinner[index].style.display = "none";
-              success[index].style.display = "block";
-              formTitle[index].innerHTML =
-                "Спасибо! <span>Ваша заявка принята</span>";
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        } else {
-          console.log(3);
-        }
+        // %2B = plus
+        axios
+          .post(
+            `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=Имя: ${name}%0AНомер: ${tel}`
+          )
+          .then(function (response) {
+            spinner[index].style.display = "none";
+            success[index].style.display = "block";
+            formTitle[index].innerHTML =
+              "Спасибо! <span>Ваша заявка принята</span>";
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       });
     });
   });
@@ -467,26 +497,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Price
-
-  const priceCard = document.querySelectorAll(".price-card");
-
-  priceCard.forEach((item) => {
-    const priceImgAnimation = item.firstElementChild.firstElementChild.animate(
-      [
-        { transform: "translateY(0)" },
-        { transform: "translateY(-5px)" },
-        { transform: "translateY(0)" },
-      ],
-      { duration: 700, fill: "forwards", iterations: Infinity }
-    );
-    priceImgAnimation.pause();
-    item.addEventListener("mouseenter", () => {
-      priceImgAnimation.play();
-    });
-    item.addEventListener("mouseleave", () => {
-      priceImgAnimation.cancel();
-    });
-  });
 
   // Navigation
 

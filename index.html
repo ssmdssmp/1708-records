@@ -122,7 +122,14 @@
           <span>мы свяжемся с вами в ближайшее время</span>
         </div>
         <input type="text" placeholder="Ваше имя" class="name" />
-        <input type="text" placeholder="Номер телефона" class="tel" />
+        <input
+          type="text"
+          pattern="^\+?3?8?(0[5-9][0-9]\d{7})$"
+          placeholder="Номер телефона"
+          class="tel"
+          value="+380"
+          required
+        />
         <img src="assets/spinner.svg" class="spinner" alt="" />
         <i class="fa-solid fa-circle-check success"></i>
         <button class="submit">Отправить</button>
@@ -439,7 +446,14 @@
                   <span>мы свяжемся с вами в ближайшее время</span>
                 </div>
                 <input type="text" placeholder="Ваше имя" class="name" />
-                <input type="text" placeholder="Номер телефона" class="tel" />
+                <input
+                  type="text"
+                  placeholder="Номер телефона"
+                  pattern="^\+?3?8?(0[5-9][0-9]\d{7})$"
+                  class="tel"
+                  value="+380"
+                  required
+                />
                 <img src="assets/spinner.svg" class="spinner" alt="" />
                 <i class="fa-solid fa-circle-check success"></i>
                 <button class="submit">Отправить</button>
