@@ -271,7 +271,7 @@ window.addEventListener("DOMContentLoaded", () => {
       fitToSection: true,
       navigationPosition: "left",
       scrollOverflow: true,
-      dragAndMove: "fingersonly",
+      dragAndMove: true,
       touchSensitivity: 15,
       normalScrollElements: ".price-card-wrapper",
       onLeave: function (index, direction) {
