@@ -278,7 +278,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth < 500 && direction.index < index.index) {
           sections[direction.index].firstElementChild.style.paddingTop = "15vh";
         }
-        console.log(sections[index.index].firstElementChild);
+        console.log(sections[direction.index].firstElementChild);
         sections[index.index].animate([{ opacity: "50%" }], {
           duration: 200,
           fill: "forwards",
