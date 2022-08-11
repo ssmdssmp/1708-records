@@ -16,6 +16,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 #close-popup {
+  z-index: 20001;
   display: none;
   cursor: pointer;
   position: absolute;
@@ -1098,6 +1099,7 @@ input {
     font-size: 3vh;
   }
   .intro-content-buttons {
+    margin-bottom: 3vh;
     width: 100%;
     gap: 10%;
   }
@@ -1228,11 +1230,13 @@ input {
   }
   .examples-item-wrapper {
     height: 90vh;
-    justify-content: end;
+    justify-content: start;
   }
   .examples-item {
+    height: unset;
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     width: 85vw;
     gap: 1vh;
   }
@@ -1303,10 +1307,11 @@ input {
     font-size: 3vh;
   }
   .contacts-info {
+    align-items: start;
     gap: 3vh;
   }
   .contacts-form {
-    width: 100%;
+    width: 90vw;
   }
   .equip-headline {
     font-size: 40px;
