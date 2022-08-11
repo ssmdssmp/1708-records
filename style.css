@@ -1231,7 +1231,7 @@ input {
   }
   .examples-item-wrapper {
     height: 90vh;
-    justify-content: center;
+    justify-content: start;
   }
   .examples-item {
     height: unset;
@@ -1255,6 +1255,7 @@ input {
     width: 85vw;
   }
   .examples-bg {
+    top: -2vh;
     height: 91vh;
   }
   .spotify {
@@ -1300,7 +1301,7 @@ input {
   }
   .contacts-list {
     padding: 0;
-    height: unset;
+    height: 25vh;
   }
 
   .contacts-list i,
