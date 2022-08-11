@@ -274,6 +274,9 @@ window.addEventListener("DOMContentLoaded", () => {
       dragAndMove: true,
       touchSensitivity: 15,
       normalScrollElements: ".price-card-wrapper",
+      afterResponsive: function () {
+        fullpage_api.setAllowScrolling(true);
+      },
       onLeave: function (index, direction) {
         fullpage.CurrentIndex = index.index;
 
