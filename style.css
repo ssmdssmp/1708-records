@@ -1282,7 +1282,7 @@ input {
   input {
     width: 100%;
     height: unset;
-    padding: 2vh;
+    padding: 1vh;
   }
   .only-contacts {
     margin-top: 1vh;
@@ -1290,7 +1290,7 @@ input {
   .contacts-form button {
     width: 100%;
     height: unset;
-    padding: 1.5vh;
+    padding: 1vh;
   }
   .contacts-form-title {
     font-size: 3vh;
