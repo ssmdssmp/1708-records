@@ -266,7 +266,7 @@ window.addEventListener("DOMContentLoaded", () => {
       autoScrolling: true,
       navigation: true,
       scrollHorizontally: true,
-      fitToSection: false,
+      fitToSection: true,
       navigationPosition: "left",
       scrollOverflow: true,
       dragAndMove: "fingersonly",
