@@ -554,7 +554,7 @@ window.addEventListener("DOMContentLoaded", () => {
       navUl.style.display = "flex ";
     } else {
       navBurger.removeAttribute("class", "open");
-      nav.animate([{ height: "55px" }], { duration: 200, fill: "forwards" });
+      nav.animate([{ height: "10vh" }], { duration: 200, fill: "forwards" });
       navUl.style.display = "none";
     }
   });
@@ -564,7 +564,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(window.innerWidth);
         burgerActive = false;
         navBurger.removeAttribute("class", "open");
-        nav.animate([{ height: "55px" }], { duration: 200, fill: "forwards" });
+        nav.animate([{ height: "10vh" }], { duration: 200, fill: "forwards" });
         navUl.style.display = "none";
       }
     });
