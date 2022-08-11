@@ -1114,13 +1114,9 @@ input {
   #contacts-intro {
     right: 100vw;
   }
-  #next,
-  #prev {
-    display: none;
-  }
   #next i,
   #prev i {
-    font-size: 7vh;
+    display: none;
   }
   .slick-track {
     height: 90vh;
@@ -1340,7 +1336,7 @@ input {
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  height: 100vh;
+  height: 100vh !important;
   opacity: 0;
 }
 .fill {

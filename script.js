@@ -138,7 +138,7 @@ window.addEventListener("DOMContentLoaded", () => {
       introContent = document.querySelector(".intro-content"),
       closePopup = document.querySelector("#close-popup");
     closePopup.addEventListener("click", () => {
-      contactsIntro.animate([{ right: "-100%" }], {
+      contactsIntro.animate([{ right: "-120%" }], {
         duration: 200,
         fill: "forwards",
       });
@@ -169,7 +169,7 @@ window.addEventListener("DOMContentLoaded", () => {
           nav.style.display = "none";
         }
       } else {
-        contactsIntro.animate([{ right: "-100%" }], {
+        contactsIntro.animate([{ right: "-120%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -205,7 +205,7 @@ window.addEventListener("DOMContentLoaded", () => {
       priceNoClick = document.querySelector(".price-no-click");
 
     priceNoClick.addEventListener("click", () => {
-      contactsIntro.animate([{ right: "-100%" }], {
+      contactsIntro.animate([{ right: "-120%" }], {
         duration: 300,
         fill: "forwards",
       });
@@ -218,7 +218,7 @@ window.addEventListener("DOMContentLoaded", () => {
               duration: 200,
               fill: "forwards",
             })
-          : contactsIntro.animate([{ right: "-100%" }], {
+          : contactsIntro.animate([{ right: "-120%" }], {
               duration: 200,
               fill: "forwards",
             });
@@ -232,7 +232,7 @@ window.addEventListener("DOMContentLoaded", () => {
         e.target === introContent
       ) {
         orderOpen = false;
-        contactsIntro.animate([{ right: "-100%" }], {
+        contactsIntro.animate([{ right: "-120%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -246,7 +246,7 @@ window.addEventListener("DOMContentLoaded", () => {
       closePopup.addEventListener("click", () => {
         console.log(orderOpen);
         orderOpen = false;
-        contactsIntro.animate([{ right: "-100%" }], {
+        contactsIntro.animate([{ right: "-120%" }], {
           duration: 200,
           fill: "forwards",
         });
