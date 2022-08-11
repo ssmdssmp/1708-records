@@ -273,8 +273,12 @@ window.addEventListener("DOMContentLoaded", () => {
       touchSensitivity: 15,
       normalScrollElements: ".price-card-wrapper",
       onLeave: function (index, direction) {
-        let sections = document.querySelectorAll(".section");
         fullpage.CurrentIndex = index.index;
+        let sections = [...document.querySelectorAll(".section")];
+        if (window.innerWidth < 500) {
+          sections[direction.index].firstElementChild.style.paddingTop = "10vh";
+        }
+        console.log(sections[index.index].firstElementChild);
         sections[index.index].animate([{ opacity: "50%" }], {
           duration: 200,
           fill: "forwards",

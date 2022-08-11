@@ -1,13 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../../../../../Users/dmitrijvolov/Desktop/projects/1708 site/design_ver_1"
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "final_1708"
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }

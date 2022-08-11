@@ -1185,7 +1185,6 @@ input {
     flex-direction: column;
   }
   .price-card-wrapper {
-    margin-top: 5vh;
     z-index: 3;
     height: 80vh;
     overflow-y: auto;
