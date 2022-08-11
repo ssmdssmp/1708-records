@@ -965,6 +965,10 @@ input {
   .fp-overflow.fp-table {
     display: unset;
   }
+  .liner {
+    height: 10vh;
+    width: 100vw;
+  }
   .nav-wrapper {
     padding: 0 2vw;
   }
@@ -1333,6 +1337,7 @@ input {
 .section {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: end;
   align-items: center;
   height: 100vh;
