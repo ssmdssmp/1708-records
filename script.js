@@ -2,13 +2,11 @@
 
 window.addEventListener("DOMContentLoaded", () => {
   // Preloader
-  document.body.addEventListener("click", (e) => {
-    console.log(e.target);
-  });
   const preloader = document.querySelector(".preloader"),
     price = document.querySelector(".price"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
-    intro = document.querySelector(".intro");
+    intro = document.querySelector(".intro"),
+    priceBg = document.querySelector(".price-bg");
   let arr = [...preloaderItems];
   arr.forEach((item) => {
     let sum = 400 + 400 * (+arr.indexOf(item) + 1);

@@ -1178,19 +1178,16 @@ input {
     left: -35px;
   }
   .price {
+    justify-content: start;
     position: relative;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     flex-direction: column;
   }
-  .price-wrapper {
-    height: 100vh;
-    overflow: auto;
-    width: 100%;
-  }
   .price-card-wrapper {
+    margin-top: 5vh;
     z-index: 3;
-    height: 70vh;
+    height: 80vh;
     overflow-y: auto;
     overflow-x: visible;
     justify-content: start;
@@ -1256,7 +1253,7 @@ input {
   }
   .examples-bg {
     top: -2vh;
-    height: 91vh;
+    height: 90vh;
   }
   .spotify {
     width: 85vw;
