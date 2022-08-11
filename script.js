@@ -277,6 +277,9 @@ window.addEventListener("DOMContentLoaded", () => {
         let sections = [...document.querySelectorAll(".section")];
         if (window.innerWidth < 500 && direction.index < index.index) {
           sections[direction.index].firstElementChild.style.paddingTop = "15vh";
+          if (direction.index === 4) {
+            sections[4].firstElementChild.style.paddingTop = "20vh";
+          }
         }
         console.log(sections[direction.index].firstElementChild);
         sections[index.index].animate([{ opacity: "50%" }], {

@@ -621,6 +621,9 @@ li.slick-active button {
   height: 100%;
   z-index: 2;
 }
+.price-mob-bg {
+  display: none;
+}
 .price-bg {
   filter: brightness(50%);
   z-index: 1;
@@ -1215,6 +1218,15 @@ input {
   }
   .price-bg {
     display: none;
+  }
+  .price-mob-bg {
+    object-fit: cover;
+    display: unset;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 90vh;
+    filter: grayscale(70%);
   }
   .examples-wrapper {
     height: 100vh;
