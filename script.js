@@ -136,13 +136,13 @@ window.addEventListener("DOMContentLoaded", () => {
       contactsIntro = document.querySelector("#contacts-intro"),
       introContent = document.querySelector(".intro-content"),
       closePopup = document.querySelector("#close-popup");
-
+    contactsIntro.style.visibility = "initial";
     orderButton.addEventListener("click", () => {
       console.log(contactsIntro.children);
       orderOpen = !orderOpen;
       if (orderOpen) {
         if (window.innerWidth > 500) {
-          contactsIntro.animate([{ right: "0px", visibility: "initial" }], {
+          contactsIntro.animate([{ right: "0px" }], {
             duration: 200,
             fill: "forwards",
           });
@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", () => {
           nav.style.display = "none";
         }
       } else {
-        contactsIntro.animate([{ right: "-100%", visibility: "hidden" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -198,7 +198,7 @@ window.addEventListener("DOMContentLoaded", () => {
       priceNoClick = document.querySelector(".price-no-click");
 
     priceNoClick.addEventListener("click", () => {
-      contactsIntro.animate([{ right: "-100%", visibility: "hidden" }], {
+      contactsIntro.animate([{ right: "-100%" }], {
         duration: 300,
         fill: "forwards",
       });
@@ -207,11 +207,11 @@ window.addEventListener("DOMContentLoaded", () => {
     priceButtons.forEach((item) => {
       item.addEventListener("click", () => {
         !orderOpen
-          ? contactsIntro.animate([{ right: "0px", visibility: "initial" }], {
+          ? contactsIntro.animate([{ right: "0px" }], {
               duration: 200,
               fill: "forwards",
             })
-          : contactsIntro.animate([{ right: "-100%", visibility: "hidden" }], {
+          : contactsIntro.animate([{ right: "-100%" }], {
               duration: 200,
               fill: "forwards",
             });
@@ -225,7 +225,7 @@ window.addEventListener("DOMContentLoaded", () => {
         e.target === introContent
       ) {
         orderOpen = false;
-        contactsIntro.animate([{ right: "-100%", visibility: "hidden" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });
@@ -239,7 +239,7 @@ window.addEventListener("DOMContentLoaded", () => {
       closePopup.addEventListener("click", () => {
         console.log(orderOpen);
         orderOpen = false;
-        contactsIntro.animate([{ right: "-100%", visibility: "hidden" }], {
+        contactsIntro.animate([{ right: "-100%" }], {
           duration: 200,
           fill: "forwards",
         });

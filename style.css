@@ -916,6 +916,7 @@ input {
   padding: 15px;
 }
 #contacts-intro {
+  visibility: hidden;
   right: -100%;
   padding: 2vh 2vw;
   z-index: 2000;
