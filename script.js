@@ -254,15 +254,17 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
     // To Top Button
-    window.addEventListener("scroll", () => {
-      if (intro.getBoundingClientRect().top < -500) {
-        toTopButton.style.display = "flex";
-      } else {
-        toTopButton.style.display = "none";
-      }
-    });
+    // window.addEventListener("scroll", () => {
+    //   if (intro.getBoundingClientRect().top < -500) {
+    //     toTopButton.style.display = "flex";
+    //   } else {
+    //     toTopButton.style.display = "none";
+    //   }
+    // });
+    let sections = [...document.querySelectorAll(".section")];
     //Fullpage
     new fullpage("#fullpage", {
+      responsiveWidth: 500,
       autoScrolling: true,
       navigation: true,
       scrollHorizontally: true,
@@ -274,11 +276,11 @@ window.addEventListener("DOMContentLoaded", () => {
       normalScrollElements: ".price-card-wrapper",
       onLeave: function (index, direction) {
         fullpage.CurrentIndex = index.index;
-        let sections = [...document.querySelectorAll(".section")];
+
         if (window.innerWidth < 500 && direction.index < index.index) {
-          sections[direction.index].firstElementChild.style.paddingTop = "15vh";
+          // sections[direction.index].firstElementChild.style.paddingTop = "15vh";
           if (direction.index === 4) {
-            sections[4].firstElementChild.style.paddingTop = "20vh";
+            // sections[4].firstElementChild.style.paddingTop = "23vh";
           }
         }
         console.log(sections[direction.index].firstElementChild);
@@ -335,6 +337,10 @@ window.addEventListener("DOMContentLoaded", () => {
             });
       },
       afterLoad: function (anchorLink, index) {
+        if (index.index < 5) {
+          sections[index.index + 1].firstElementChild.style.paddingTop =
+            "unset";
+        }
         headlines.animate([{ opacity: "100%" }], {
           duration: 100,
           fill: "forwards",
@@ -355,6 +361,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       },
     });
+
     //Map
     function initMap() {
       var map = new google.maps.Map(document.getElementById("map"), {
