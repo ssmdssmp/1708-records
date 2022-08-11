@@ -1100,7 +1100,7 @@ input {
     font-size: 3vh;
   }
   .intro-content-buttons {
-    margin-bottom: 5vh;
+    margin-bottom: 7vh;
     width: 100%;
     gap: 10%;
   }
@@ -1225,13 +1225,13 @@ input {
   }
   .examples {
     position: relative;
-    height: 100vh;
-    align-items: end;
+    height: 90vh;
+    /* align-items: end;s */
     justify-content: center;
   }
   .examples-item-wrapper {
     height: 90vh;
-    justify-content: start;
+    justify-content: center;
   }
   .examples-item {
     height: unset;
@@ -1255,7 +1255,7 @@ input {
     width: 85vw;
   }
   .examples-bg {
-    top: -1vh;
+    height: 91vh;
   }
   .spotify {
     width: 85vw;
