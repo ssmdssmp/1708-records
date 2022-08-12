@@ -335,13 +335,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 fill: "forwards",
               })
             );
-        const IntroButtons = document.querySelector(".intro-content-buttons");
-        direction.index === 0
-          ? IntroButtons.animate([{ marginBottom: "unset" }], {
-              duration: 500,
-              fill: "forwards",
-            })
-          : 0;
         direction.index < 2
           ? nav.animate([{ backgroundColor: "rgba(0,0,0,0)" }], {
               duration: 300,
