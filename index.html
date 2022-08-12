@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.css" integrity="sha512-zDKgq9gDZL1N3buxzFPZjHwqDOFsgTyhR0aJtXLFTIjEFovumXMaVeF6iBUZ/Rc4Mb0IqRrhqAY+RY7OCUBo6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <meta name="theme-color" content="#7956ee" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.css"
+      integrity="sha512-zDKgq9gDZL1N3buxzFPZjHwqDOFsgTyhR0aJtXLFTIjEFovumXMaVeF6iBUZ/Rc4Mb0IqRrhqAY+RY7OCUBo6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
@@ -13,77 +20,130 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="icon" href="assets/icon.png" />
+    <title>1708 Records</title>
   </head>
   <body>
-    <div class="to-top">
-      <i class="fa-solid fa-angle-up" id="to-top"></i>
-    </div>
     <div class="preloader">
-    <div class="pre-items">1</div>
-    <div class="pre-items">7</div>
-    <div class="pre-items">0</div>
-    <div class="pre-items"><span>8</span></div>
+      <div class="pre-items">1</div>
+      <div class="pre-items">7</div>
+      <div class="pre-items">0</div>
+      <div class="pre-items"><span>8</span></div>
     </div>
     <nav>
-      <div class="logo">170<span>8</span> </div>
-      
-      <ul>
-        <li>Оборудование</li>
-        <li>Контакты</li>
-        <li>Цены</li>
-      </ul>
-      <div class="nav-icon">
-        <div id="nav-icon1">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    </nav>
-    <div id="fullpage">
-        <div class="intro section" id="intro">
-          <div class="contacts-info" id ='contacts-intro' style="position: absolute; right: -500px; height:100%; flex-direction: column-reverse; justify-content: start; gap:20px; background-color: black;">
-            <i class="fa-solid fa-xmark" id="close-popup"></i>
-            <ul class="contacts-list" style="flex-direction: column-reverse; justify-content: end; gap: 30px; margin-top: 50px;">
-                <li style="margin-top:20px; display:flex; flex-direction: row; justify-content: start; align-items: flex-start;">
-                  <i class="fa-solid fa-calendar-week" style="font-size:20px"></i>
-                 <a href="#" style="font-size:20px">
-                  Пн-Пт: 10:00-23:00 /
-                  <span style="margin-top:25px; font-size: 20px; display: unset; color:var(--main-color)">Сб-Вс:10:00-16:00</span>
-                 </a>
-                </li>
-                <li>
-                  <i class="fa-brands fa-instagram" ></i>
-                    <a target="_blank"  href="https://www.instagram.com/guber.rrr/">instagram.com/guber.rrr</a>
-                </li>
-                <li>
-                  <i class="fa-brands fa-telegram" ></i>
-                    <a target="_blank"  href="https://t.me/rapipesni">t.me/rapipesni</a>
-                </li>
-                <li>
-                  <i class="fa-solid fa-square-phone" "></i>
-                    <a style="color: var(--main-color);" href="tel:+380506511755">+ 380 50 651 1755 </a>
-                </li>
-            </ul>
-            <div class="contacts-form" style="margin-top:100px">
-              <div class="contacts-form-title">
-               заполните форму,
-              <span>мы свяжемся с вами в ближайшее время</span>
-          </div>
-                    <input type="text" placeholder="Ваше имя" id="name">
-                    <input type="text" placeholder="Номер телефона" id="tel">
-                    <img src="assets/spinner.svg" id='spinner' alt="">
-                    <i class="fa-solid fa-circle-check" id="success"></i>
-                    <button class="submit" id="submit">Отправить</button>
+      <div class="nav-wrapper">
+        <div class="logo">170<span>8</span></div>
+        <ul>
+          <li>Оборудование</li>
+          <li>Контакты</li>
+          <li>Цены</li>
+        </ul>
+        <div class="burger">
+          <div class="nav-icon">
+            <div id="nav-icon1">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="headlines-wrapper">
+        <div class="headlines">
+          <div class="headline-item"></div>
+          <div class="headline-item">Галерея</div>
+          <div class="headline-item" id="equip-headline">Оборудование</div>
+          <div class="headline-item">Цены</div>
+          <div class="headline-item">Примеры работ</div>
+          <div class="headline-item">Контакты</div>
+        </div>
+      </div>
+    </nav>
+    <div class="contacts-info" id="contacts-intro">
+      <i class="fa-solid fa-xmark" id="close-popup"></i>
+      <ul
+        class="contacts-list"
+        style="
+          flex-direction: column-reverse;
+          justify-content: end;
+          gap: 30px;
+          margin-top: 50px;
+        "
+      >
+        <li
+          style="
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: flex-start;
+          "
+        >
+          <i class="fa-solid fa-calendar-week" style="font-size: 20px"></i>
+          <a href="#" style="font-size: 20px">
+            Пн-Пт: 10:00-23:00 /
+            <span
+              style="
+                margin-top: 25px;
+                font-size: 20px;
+                display: unset;
+                color: var(--main-color);
+              "
+              >Сб-Вс:10:00-16:00</span
+            >
+          </a>
+        </li>
+        <li>
+          <i class="fa-brands fa-instagram"></i>
+          <a target="_blank" href="https://www.instagram.com/guber.rrr/"
+            >instagram.com/guber.rrr</a
+          >
+        </li>
+        <li>
+          <i class="fa-brands fa-telegram"></i>
+          <a target="_blank" href="https://t.me/rapipesni">t.me/rapipesni</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-square-phone"></i>
+          <a style="color: var(--main-color)" href="tel:+380506511755"
+            >+ 380 50 651 1755
+          </a>
+        </li>
+      </ul>
+      <div class="contacts-form" style="margin-top: 100px">
+        <div class="contacts-form-title">
+          заполните форму,
+          <span>мы свяжемся с вами в ближайшее время</span>
+        </div>
+        <input type="text" placeholder="Ваше имя" class="name" />
+        <input
+          type="text"
+          pattern="^\+?3?8?(0[5-9][0-9]\d{7})$"
+          placeholder="Номер телефона"
+          class="tel"
+          value="+380"
+          required
+        />
+        <img src="assets/spinner.svg" class="spinner" alt="" />
+        <i class="fa-solid fa-circle-check success"></i>
+        <button class="submit">Отправить</button>
+      </div>
+    </div>
+    <div id="fullpage">
+      <div class="section">
+        <div class="intro" id="intro">
           <div class="intro-content">
             <div class="intro-content-text">
               <h1>Студия звукозаписи<span> На Позняках</span></h1>
-              <a href="#">Пр-т П. Григоренка 5А</a>
+              <a id="adress">Пр-т П. Григоренка 5А</a>
             </div>
             <div class="intro-content-buttons">
               <button>Записаться</button>
@@ -91,162 +151,195 @@
             </div>
           </div>
         </div>
+      </div>
 
-        
-          
-        <div class="break-intro-gallery">
-          <div class="line">
-            170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span
-              >8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>
-          </div>
-        </div>
-  
-        <div class="gallery section">
+      <!-- <div class="line">
+        170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span>8</span>170<span
+          >8</span
+        >
+      </div> -->
+
+      <div class="section">
+        <div class="gallery">
           <div id="next"><i class="fa-solid fa-angles-right"></i></div>
-         <div id="prev"> <i class="fa-solid fa-angles-left" ></i></div>
+          <div id="prev"><i class="fa-solid fa-angles-left"></i></div>
           <div class="slider">
-          
             <img src="assets/s1.webp" alt="First Slide" />
-            <img src="assets/s2.webp" alt="Second Slide"/>
+            <img src="assets/s2.webp" alt="Second Slide" />
             <img src="assets/s3.webp" alt="Third Slide" />
             <img src="assets/s4.webp" alt="Fourth Slide" />
           </div>
         </div>
-  
-     
-      <div class="equip section" id="equip">
+      </div>
 
-          <div class="equip-headline">
-             Оборудование
-  
-          </div>
+      <div class="section">
+        <div class="equip" id="equip">
           <div class="equip-content">
-            <img src="assets/equip.webp" alt="Light Theme" class="equip-bg">
-            <img src="assets/equip_alt.webp" alt="Dark Theme" class="equip-bg" id="equip-bg-alt">
             <div class="filter"></div>
+            <img src="assets/equip.webp" alt="Light Theme" class="equip-bg" />
+            <img
+              src="assets/equip_alt.webp"
+              alt="Dark Theme"
+              class="equip-bg"
+              id="equip-bg-alt"
+            />
             <div class="equip-mode-switcher">
               <div class="switcher-tooltip">
-                <div class="switcher-desk-text">
-                  Сменить освещение
-                
-                </div>
+                <div class="switcher-desk-text">Сменить освещение</div>
+
                 <i class="fa-solid fa-angle-right"></i>
               </div>
               <i class="fa-regular fa-lightbulb"></i>
             </div>
-              <div class="equip-dot" id="apolo" >
-                  <div class="equip-dot-popup">
-                      <img src="" alt="">
-                      <div class="dot-popup-content">
-                          <div class="dot-popup-headline">
-                              Apollo Twin X DUO Heritage Edition
-                          </div>
-                          <div class="dot-popup-desk">
-                              позволяет музыкантам и продюсерам легко отслеживать,
-                              накладывать и микшировать с помощью аналого-цифрового
-                              и цифро-аналогового преобразования элитного класса
-                          </div>    
-                          </div>
-                      </div>
+            <div
+              class="equip-dot"
+              data-index="1"
+              id="apolo"
+              data-duration="900"
+              data-scalemode="height"
+              data-targetsize="0.05"
+            >
+              <div class="equip-dot-popup">
+                <img src="" alt="" />
+                <div class="dot-popup-content">
+                  <div class="dot-popup-headline">
+                    Apollo Twin X DUO Heritage Edition
                   </div>
-              
-              <div class="equip-dot" id="rode">
-                  <div class="equip-dot-popup">
-                      <img src="" alt="">
-                      <div class="dot-popup-content">
-                          <div class="dot-popup-headline">
-                              Rode NT1
-                          </div>
-                          <div class="dot-popup-desk">
-                              предлагает детализированную
-                      среднечастотную характеристику
-                      в сочетании с гладкими высокими частотами
-                      и округлым басом, что делает NT1 абсолютным
-                      лидером в своем классе.
-                          </div>
-                      </div>
+                  <div class="dot-popup-desk">
+                    позволяет музыкантам и продюсерам легко отслеживать,
+                    накладывать и микшировать с помощью аналого-цифрового и
+                    цифро-аналогового преобразования элитного класса
                   </div>
+                </div>
               </div>
-              <div class="equip-dot" id="adam">
-                  <div class="equip-dot-popup">
-                      <img src="" alt="">
-                      <div class="dot-popup-content">
-                          <div class="dot-popup-headline">
-                              ADAM A7V
-                          </div>
-                          <div class="dot-popup-desk">
-                              Мониторы ADAM Audio заслужили
-                              всемирную репутацию превосходного инструмента
-                              для звукорежиссеров,
-                              основанного на технологических инновациях.
-                          </div>
-                      </div>
+            </div>
+
+            <div
+              class="equip-dot"
+              data-index="2"
+              id="rode"
+              data-duration="900"
+              data-scalemode="height"
+              data-targetsize="0.05"
+            >
+              <div class="equip-dot-popup">
+                <img src="" alt="" />
+                <div class="dot-popup-content">
+                  <div class="dot-popup-headline">Rode NT1</div>
+                  <div class="dot-popup-desk">
+                    предлагает детализированную среднечастотную характеристику в
+                    сочетании с гладкими высокими частотами и округлым басом,
+                    что делает NT1 абсолютным лидером в своем классе.
                   </div>
+                </div>
               </div>
-              <div class="equip-dot" id="zhivchik">
-                  <div class="equip-dot-popup">
-                      <img src="" alt="">
-                      <div class="dot-popup-content">
-                          <div class="dot-popup-headline">
-                              Живчик 2л
-                          </div>
-                          <div class="dot-popup-desk">
-                              «Живчик Яблуко»  містить натуральний яблучний сік та 
-                              екстракт ехінацеї. Напій збагачений корисними мікроелементами та вітамінами C і E, що сприяють зміцненню імунітету.
-                              Це не лише неймовірно смачно, а й корисно!
-                          
-                          </div>
-                      </div>
+            </div>
+            <div
+              class="equip-dot"
+              data-index="3"
+              id="adam"
+              data-duration="900"
+              data-scalemode="height"
+              data-targetsize="0.05"
+            >
+              <div class="equip-dot-popup">
+                <img src="" alt="" />
+                <div class="dot-popup-content">
+                  <div class="dot-popup-headline">ADAM A7V</div>
+                  <div class="dot-popup-desk">
+                    Мониторы ADAM Audio заслужили всемирную репутацию
+                    превосходного инструмента для звукорежиссеров, основанного
+                    на технологических инновациях.
                   </div>
+                </div>
               </div>
+            </div>
+            <div
+              class="equip-dot"
+              data-index="4"
+              id="zhivchik"
+              data-duration="900"
+              data-scalemode="height"
+              data-targetsize="0.05"
+            >
+              <div class="equip-dot-popup">
+                <img src="" alt="" />
+                <div class="dot-popup-content">
+                  <div class="dot-popup-headline">Живчик 2л</div>
+                  <div class="dot-popup-desk">
+                    «Живчик Яблуко» містить натуральний яблучний сік та екстракт
+                    ехінацеї. Напій збагачений корисними мікроелементами та
+                    вітамінами C і E, що сприяють зміцненню імунітету. Це не
+                    лише неймовірно смачно, а й корисно!
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
-  
-      <div class="price-headline ">
-        Цены
-      </div>
-  
-      <div class="price-wrapper section">
+
+      <div class="section">
         <div class="price" id="price">
-          <div class="price-no-click " ></div>
-          <iframe width="560" class='price-bg'  data-keepplaying height="315" src="https://www.youtube.com/embed/tKL75_6MoU8?t=690?loop=1&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <div class="price-wrapper">
+          <div class="price-no-click"></div>
+          <img src="assets/price_mobile.webp" class="price-mob-bg" alt="" />
+          <iframe
+            width="100%"
+            class="price-bg"
+            data-keepplaying
+            height="100%"
+            src="https://www.youtube.com/embed/tKL75_6MoU8?start=780%579Floop=1&autoplay=1&mute=1&controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <div class="price-card-wrapper">
             <div class="price-card">
               <div class="price-card-img">
                 <i class="fa-solid fa-microphone"></i>
-                <hr>
+                <hr />
               </div>
-              
+
               <div class="price-card-title">Запись</div>
               <div class="price-card-value">400 грн<span>/ час</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius, quia doloremque dolorem, est maxime accusantium provident officiis aspernatur, non unde eum ex veritatis odio quo! Enim itaque optio ipsum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente eius, quia doloremque dolorem, est maxime accusantium
+                provident officiis aspernatur, non unde eum ex veritatis odio
+                quo! Enim itaque optio ipsum.
               </div>
               <button>Заказать</button>
             </div>
             <div class="price-card">
               <div class="price-card-img">
                 <i class="fa-brands fa-itunes-note"></i>
-                <hr>
+                <hr />
               </div>
-             
+
               <div class="price-card-title">Сведение</div>
               <div class="price-card-value">800 грн<span>/ трек</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius, quia doloremque dolorem, est maxime accusantium provident officiis aspernatur, non unde eum ex veritatis odio quo! Enim itaque optio ipsum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente eius, quia doloremque dolorem, est maxime accusantium
+                provident officiis aspernatur, non unde eum ex veritatis odio
+                quo! Enim itaque optio ipsum.
               </div>
               <button>Заказать</button>
             </div>
             <div class="price-card">
               <div class="price-card-img">
                 <i class="fa-solid fa-compact-disc"></i>
-                <hr>
+                <hr />
               </div>
-              
+
               <div class="price-card-title">Дистрибуция</div>
               <div class="price-card-value">400 грн<span>/ трек</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius, quia doloremque dolorem, est maxime accusantium provident officiis aspernatur, non unde eum ex veritatis odio quo! Enim itaque optio ipsum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente eius, quia doloremque dolorem, est maxime accusantium
+                provident officiis aspernatur, non unde eum ex veritatis odio
+                quo! Enim itaque optio ipsum.
               </div>
               <button>Заказать</button>
             </div>
@@ -254,89 +347,118 @@
         </div>
       </div>
 
-      <div class="examples-headline">
-        Примеры работ
+      <div class="section">
+        <div class="examples">
+          <!-- <div class="headline"></div> -->
+          <img src="assets/examples_bg.webp" class="examples-bg" alt="" />
+          <div class="examples-item-wrapper">
+            <div class="examples-item">
+              <div class="examples-item-title">
+                Guber - Ya Geniy (2022)
+                <span>Запись, Сведение, Мастеринг</span>
+              </div>
+              <div class="examples-item-spotify">
+                <iframe
+                  data-keepplaying
+                  class="spotify"
+                  style="border-radius: 12px"
+                  src="https://open.spotify.com/embed/track/2nEeqUtNwQIHkv2q7sH8To?utm_source=generator"
+                  width="100%"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+            </div>
+            <div class="examples-item">
+              <div class="examples-item-title">
+                Guber - Ya Geniy (2022)
+                <span>Запись, Сведение, Мастеринг</span>
+              </div>
+              <div class="examples-item-spotify">
+                <iframe
+                  data-keepplaying
+                  class="spotify"
+                  style="border-radius: 12px"
+                  src="https://open.spotify.com/embed/album/3X3Qai5keGxIrRY679Hfvr?utm_source=generator&theme=0"
+                  width="100%"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="examples section">
-        <img src="assets/examples_bg.webp" class="examples-bg" alt="">
-        <div class="examples-item">
-          <div class="examples-item-title">
-            Guber - Ya Geniy (2022)
-            <span>Запись, Сведение, Мастеринг</span>
-          </div>
-          <div class="examples-item-spotify">
-            <iframe class="spotify" style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/2nEeqUtNwQIHkv2q7sH8To?utm_source=generator"
-            width="100%" height="380" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-          </div>
-        </div>
-        <div class="examples-item">
-          <div class="examples-item-title">
-            Guber - Ya Geniy (2022)
-            <span>Запись, Сведение, Мастеринг</span>
-          </div>
-          <div class="examples-item-spotify">
-            <iframe class="spotify" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/3X3Qai5keGxIrRY679Hfvr?utm_source=generator&theme=0"
-            width="100%" height="380" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-          </div>
-        </div>
-      </div>
-  
-      <div class="contacts section" id="contacts">
-        <div class="contacts-headline">
-            Контакты
-        </div>
-        <div class="contacts-wrapper">
+
+      <div class="section">
+        <div class="contacts" id="contacts">
+          <div class="contacts-items-wrapper">
             <div class="contacts-map">
               <div id="map" class="map"></div>
-                  <!-- <iframe
+              <!-- <iframe
                       src="https://www.google.com/maps/embed?074c0937b8c9908"
                       width="100%" height="600" style="border:0; filter:invert(-1)" allowfullscreen="" loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade">
                   </iframe> -->
-                <div class="contacts-map-adress">Пр-т П. Григоренка, 5А</div>
+              <div class="contacts-map-adress">Пр-т П. Григоренка, 5А</div>
             </div>
             <div class="contacts-info">
-                <ul class="contacts-list">
-                    <li>
-                      <i class="fa-solid fa-calendar-week"></i>
-                     <a href="#">
-                      Пн-Пт: 10:00-23:00
-                      <span>Сб-Вс:10:00-16:00</span>
-                     </a>
-                    </li>
-                    <li>
-                      <i class="fa-brands fa-instagram"></i>
-                        <a target="_blank" href="https://www.instagram.com/guber.rrr/">instagram.com/guber.rrr</a>
-                    </li>
-                    <li>
-                      <i class="fa-brands fa-telegram"></i>
-                        <a target="_blank" href="https://t.me/rapipesni">t.me/rapipesni</a>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-square-phone"></i>
-                        <a>+ 380 ### ### ### </a>
-                    </li>
+              <ul class="contacts-list">
+                <li>
+                  <i class="fa-solid fa-calendar-week calendar"></i>
+                  <a href="#" id="hours">
+                    Пн-Пт: 10:00-23:00
+                    <span>Сб-Вс: 10:00-16:00</span>
+                  </a>
+                </li>
+                <ul class="only-contacts">
+                  <li>
+                    <i class="fa-brands fa-instagram"></i>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/guber.rrr/"
+                      >instagram.com/guber.rrr</a
+                    >
+                  </li>
+                  <li>
+                    <i class="fa-brands fa-telegram"></i>
+                    <a target="_blank" href="https://t.me/rapipesni"
+                      >t.me/rapipesni</a
+                    >
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-square-phone"></i>
+                    <a href="tel:+380506511755">+ 380 ### ### ### </a>
+                  </li>
                 </ul>
-                <div class="contacts-form">
-                  <div class="contacts-form-title">
+              </ul>
+              <div class="contacts-form">
+                <div class="contacts-form-title">
                   или заполните форму,
                   <span>мы свяжемся с вами в ближайшее время</span>
-              </div>
-                        <input type="text" placeholder="Ваше имя" id="name">
-                        <input type="text" placeholder="Номер телефона" id="tel">
-                        <img src="assets/spinner.svg" id='spinner' alt="">
-                        <i class="fa-solid fa-circle-check" id="success"></i>
-                        <button class="submit" id="submit">Отправить</button>
                 </div>
+                <input type="text" placeholder="Ваше имя" class="name" />
+                <input
+                  type="text"
+                  placeholder="Номер телефона"
+                  pattern="^\+?3?8?(0[5-9][0-9]\d{7})$"
+                  class="tel"
+                  value="+380"
+                  required
+                />
+                <img src="assets/spinner.svg" class="spinner" alt="" />
+                <i class="fa-solid fa-circle-check success"></i>
+                <button class="submit">Отправить</button>
+              </div>
             </div>
+          </div>
         </div>
-    
-  </div>
       </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -348,20 +470,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgd5IzCFy27NIuEimbQRrLH2ouRb9xMOg &callback=initMap"
-    async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js" integrity="sha512-JSVRnP8UFs0ieN/cvP9v4vmW1CotIaEKKN7W+4JaKNrllZolTv2aJfVGn4BFdfZ1jRZxgTAAaXWdlZbEm9iwFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgd5IzCFy27NIuEimbQRrLH2ouRb9xMOg &callback=initMap"
+      async
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"
+      integrity="sha512-JSVRnP8UFs0ieN/cvP9v4vmW1CotIaEKKN7W+4JaKNrllZolTv2aJfVGn4BFdfZ1jRZxgTAAaXWdlZbEm9iwFA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
-    <script>
-      new fullpage('#fullpage', {
-	//options here
-	autoScrolling:true,
-  navigation:true,
-	scrollHorizontally: true,
-  fitToSection: true
-});
-    </script>
+    <script></script>
   </body>
 </html>
