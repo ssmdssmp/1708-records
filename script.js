@@ -2,6 +2,9 @@
 
 window.addEventListener("DOMContentLoaded", () => {
   // Preloader
+  document.body.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
   const preloader = document.querySelector(".preloader"),
     price = document.querySelector(".price"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
@@ -70,19 +73,19 @@ window.addEventListener("DOMContentLoaded", () => {
       ],
     });
     let a = -1000;
-    $(".slider").on(
-      "beforeChange",
-      function (event, slick, currentSlide, nextSlide) {
-        const line = document.querySelector(".line");
-        let b;
-        currentSlide > nextSlide ? (b = a + 200) : (b = a - 200);
-        a = b;
-        line.animate([{ right: `${b}px` }], {
-          duration: 600,
-          fill: "forwards",
-        });
-      }
-    );
+    // $(".slider").on(
+    //   "beforeChange",
+    //   function (event, slick, currentSlide, nextSlide) {
+    //     const line = document.querySelector(".line");
+    //     let b;
+    //     currentSlide > nextSlide ? (b = a + 200) : (b = a - 200);
+    //     a = b;
+    //     line.animate([{ right: `${b}px` }], {
+    //       duration: 600,
+    //       fill: "forwards",
+    //     });
+    //   }
+    // );
     const headlines = document.querySelector(".headlines"),
       headlinesItems = document.querySelectorAll(".headline-item");
     headlinesItems.forEach((item) => {
@@ -98,7 +101,25 @@ window.addEventListener("DOMContentLoaded", () => {
       equipBgLight = document.querySelector(".equip-bg"),
       equipBgDark = document.querySelector("#equip-bg-alt");
     let night = false;
+    if (window.innerWidth < 500) {
+      const switcherVibration = switcher.animate(
+        [{ top: "8vh" }, { top: "7.5vh" }, { top: "8vh" }],
+        {
+          duration: 1000,
+          fill: "forwards",
+          iterations: Infinity,
+        }
+      );
 
+      switcher.addEventListener(
+        "click",
+        () => {
+          switcherVibration.cancel();
+          clearInterval(switcherVibrationInterval);
+        },
+        { once: true }
+      );
+    }
     function changeTheme() {
       if (night == false) {
         equipBgDark.animate([{ opacity: 0 }], {
@@ -265,9 +286,9 @@ window.addEventListener("DOMContentLoaded", () => {
     //Fullpage
     new fullpage("#fullpage", {
       responsiveWidth: 500,
-      autoScrolling: false,
+      autoScrolling: true,
       navigation: true,
-      scrollHorizontally: true,
+      scrollHorizontally: false,
       fitToSection: true,
       navigationPosition: "left",
       scrollOverflow: true,
@@ -279,14 +300,6 @@ window.addEventListener("DOMContentLoaded", () => {
       },
       onLeave: function (index, direction) {
         fullpage.CurrentIndex = index.index;
-
-        if (window.innerWidth < 500 && direction.index < index.index) {
-          // sections[direction.index].firstElementChild.style.paddingTop = "15vh";
-          if (direction.index === 4) {
-            // sections[4].firstElementChild.style.paddingTop = "23vh";
-          }
-        }
-        console.log(sections[direction.index].firstElementChild);
         sections[index.index].animate([{ opacity: "50%" }], {
           duration: 200,
           fill: "forwards",
@@ -308,7 +321,7 @@ window.addEventListener("DOMContentLoaded", () => {
           : direction.index === 1
           ? (document.querySelector("#fp-nav").style.display = "block")
           : (document.querySelector("#fp-nav").style.display = "block");
-        direction.index < 2
+        direction.index < 1
           ? headlinesItems.forEach((item) =>
               item.animate([{ opacity: 0 }], {
                 duration: 100,
@@ -340,10 +353,6 @@ window.addEventListener("DOMContentLoaded", () => {
             });
       },
       afterLoad: function (anchorLink, index) {
-        if (index.index < 5) {
-          sections[index.index + 1].firstElementChild.style.paddingTop =
-            "unset";
-        }
         headlines.animate([{ opacity: "100%" }], {
           duration: 100,
           fill: "forwards",
@@ -565,7 +574,7 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerActive = !burgerActive;
     if (burgerActive == true) {
       navBurger.setAttribute("class", "open");
-      nav.animate([{ height: "200px" }], { duration: 200, fill: "forwards" });
+      nav.animate([{ height: "30vh" }], { duration: 200, fill: "forwards" });
       navUl.style.display = "flex ";
     } else {
       navBurger.removeAttribute("class", "open");

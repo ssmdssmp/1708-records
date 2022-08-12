@@ -968,6 +968,10 @@ input {
   .fp-overflow.fp-table {
     display: unset;
   }
+  .section:nth-child(2) {
+    height: 80vh;
+    justify-content: center;
+  }
   .liner {
     height: 10vh;
     width: 100vw;
@@ -984,7 +988,7 @@ input {
     bottom: 0;
     margin-right: unset;
     margin-left: 15px;
-    font-size: 20px;
+    font-size: 3vh;
     text-transform: unset;
     padding: unset;
     display: none;
@@ -1116,6 +1120,9 @@ input {
   }
   #contacts-intro {
     right: 100vw;
+    padding: 10vh 3vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
   }
   #next i,
   #prev i {
@@ -1170,7 +1177,7 @@ input {
   }
   .gallery {
     height: 90vh;
-    align-items: unset;
+    align-items: center;
   }
 
   #adam .equip-dot-popup,
@@ -1188,6 +1195,7 @@ input {
     flex-direction: column;
   }
   .price-card-wrapper {
+    margin-top: 5vh;
     z-index: 3;
     height: 80vh;
     overflow-y: auto;
@@ -1239,7 +1247,7 @@ input {
   }
   .examples-item-wrapper {
     height: 90vh;
-    justify-content: start;
+    justify-content: space-around;
   }
   .examples-item {
     height: unset;
@@ -1290,7 +1298,8 @@ input {
   input {
     width: 100%;
     height: unset;
-    padding: 1vh;
+    padding: 2vh;
+    font-size: 2vh;
   }
   .only-contacts {
     margin-top: 1vh;
@@ -1298,7 +1307,7 @@ input {
   .contacts-form button {
     width: 100%;
     height: unset;
-    padding: 1vh;
+    padding: 2vh;
   }
   .contacts-form-title {
     font-size: 3vh;
@@ -1332,7 +1341,9 @@ input {
   }
 
   #close-popup {
+    top: 10vh;
     display: block;
+    font-size: 5vh;
   }
 }
 .slider img {
