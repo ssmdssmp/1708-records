@@ -336,7 +336,12 @@ window.addEventListener("DOMContentLoaded", () => {
               })
             );
         const IntroButtons = document.querySelector(".intro-content-buttons");
-        direction.index === 0 ? (IntroButtons.style.marginBottom = "unset") : 0;
+        direction.index === 0
+          ? IntroButtons.animate([{ marginBottom: "unset" }], {
+              duration: 500,
+              fill: "forwards",
+            })
+          : 0;
         direction.index < 2
           ? nav.animate([{ backgroundColor: "rgba(0,0,0,0)" }], {
               duration: 300,
@@ -459,17 +464,15 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     function deskToggler(a) {
       if (dotActive) {
-        console.log(equipArr.indexOf(a));
         equipArr.forEach((item) => {
           dotActive = false;
           item.firstElementChild.style.opacity = "0";
-          // item.firstElementChild.style.display ='none';
+          // item.firstElementChild.style.display = "none";
           equipArr[equipArr.indexOf(a)].firstElementChild.style.display =
             "flex";
         });
 
         setTimeout(() => {
-          // a.firstElementChild.style.opacity ='0';
           equipArr[equipArr.indexOf(a)].firstElementChild.style.opacity = "1";
         }, 1);
       } else {
@@ -482,7 +485,6 @@ window.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("click", (e) => {
       if (e.target === item) {
         dotActive = !dotActive;
-        console.log(dotActive);
         if (dotActive) {
           dotAnimation.pause();
           deskToggler(item);

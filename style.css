@@ -1119,10 +1119,15 @@ input {
     margin: 30px 0px;
   }
   #contacts-intro {
+    gap: 3vh;
     right: 100vw;
     padding: 10vh 3vw;
     background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
+  }
+  #prev,
+  #next {
+    display: none;
   }
   #next i,
   #prev i {
@@ -1156,6 +1161,9 @@ input {
   }
   #apolo .dot-popup-headline {
     font-size: 2vh;
+  }
+  .slick-slide {
+    margin: 0;
   }
   .slider-next,
   .slider-prev {
