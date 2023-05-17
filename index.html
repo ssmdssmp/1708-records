@@ -29,7 +29,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/icon.png" />
-    <title>1708 Records</title>
+    <title>Родзинка Рекордс</title>
   </head>
   <body>
     <div class="preloader">
@@ -42,9 +42,9 @@
       <div class="nav-wrapper">
         <div class="logo">Родзинка Рекордс</div>
         <ul>
-          <li>Оборудование</li>
-          <li>Контакты</li>
-          <li>Цены</li>
+          <li class="nav-item">Обладнання</li>
+          <li class="nav-item">Контакти</li>
+          <li class="nav-item">Ціни</li>
         </ul>
         <div class="burger">
           <div class="nav-icon">
@@ -60,34 +60,36 @@
         <div class="headlines">
           <div class="headline-item"></div>
           <div class="headline-item">Галерея</div>
-          <div class="headline-item" id="equip-headline">Оборудование</div>
-          <div class="headline-item">Цены</div>
-          <div class="headline-item">Примеры работ</div>
-          <div class="headline-item">Контакты</div>
+          <div class="headline-item" id="equip-headline">Обладнання</div>
+          <div class="headline-item">Ціни</div>
+          <div class="headline-item">Приклади робіт</div>
+          <div class="headline-item">Контакти</div>
         </div>
       </div>
     </nav>
     <div class="contacts-info" id="contacts-intro">
       <i class="fa-solid fa-xmark" id="close-popup"></i>
+
       <ul
         class="contacts-list"
         style="
           flex-direction: column-reverse;
-          justify-content: end;
-          gap: 30px;
-          margin-top: 50px;
+          gap: 3vh;
+          text-transform: uppercase;
         "
       >
         <li
           style="
-            margin-top: 20px;
             display: flex;
             flex-direction: row;
             justify-content: start;
             align-items: flex-start;
           "
         >
-          <i class="fa-solid fa-calendar-week" style="font-size: 20px"></i>
+          <i
+            class="fa-solid fa-calendar-week"
+            style="font-size: 20px; margin-bottom: 3px"
+          ></i>
           <a href="#" style="font-size: 20px">
             Пн-Пт: 10:00-23:00 /
             <span
@@ -118,12 +120,18 @@
           </a>
         </li>
       </ul>
-      <div class="contacts-form" style="margin-top: 100px">
+      <div class="contacts-headline">Контакти</div>
+      <div class="contacts-form" style="margin-top: 10vh">
         <div class="contacts-form-title">
-          заполните форму,
-          <span>мы свяжемся с вами в ближайшее время</span>
+          Заповніть форму
+          <span>ми зв'яжемося з вами якнайшвидше</span>
         </div>
-        <input type="text" placeholder="Ваше имя" class="name" />
+        <input
+          class="name-input"
+          type="text"
+          placeholder="Ваше имя"
+          class="name"
+        />
         <input
           type="text"
           pattern="^\+?3?8?(0[5-9][0-9]\d{7})$"
@@ -134,21 +142,21 @@
         />
         <img src="assets/spinner.svg" class="spinner" alt="" />
         <i class="fa-solid fa-circle-check success"></i>
-        <button class="submit">Отправить</button>
+        <button class="submit">Підтвердити</button>
       </div>
     </div>
     <div id="fullpage">
       <div class="section">
         <div class="intro" id="intro">
-          <img class="intro-bg" src="assets/intro_bg.jpg" alt="">
+          <img class="intro-bg" src="assets/intro_bg.jpg" alt="" />
           <div class="intro-content">
             <div class="intro-content-text">
-              <h1>Студия звукозаписи<span> На Позняках</span></h1>
+              <h1>Студія звукозапису<span> На Позняках</span></h1>
               <a id="adress">Пр-т П. Григоренка 5А</a>
             </div>
             <div class="intro-content-buttons">
-              <button>Записаться</button>
-              <button>Контакты</button>
+              <button>Записатися</button>
+              <button>Контакти</button>
             </div>
           </div>
         </div>
@@ -161,14 +169,16 @@
       </div> -->
 
       <div class="section">
+        <div class="headline-mob">Галерея</div>
         <div class="gallery">
           <div id="next"><i class="fa-solid fa-angles-right"></i></div>
           <div id="prev"><i class="fa-solid fa-angles-left"></i></div>
           <div class="slider">
-            <img src="assets/s1.webp" alt="First Slide" />
-            <img src="assets/s2.webp" alt="Second Slide" />
-            <img src="assets/s3.webp" alt="Third Slide" />
-            <img src="assets/s4.webp" alt="Fourth Slide" />
+            <img class="first" src="assets/s1.png" alt="First Slide" />
+            <img src="assets/s2.png" alt="Second Slide" />
+            <img src="assets/s3.png" alt="Third Slide" />
+            <img src="assets/s4.png" alt="Fourth Slide" />
+            <img src="assets/s5.png" alt="Fifth Slide" />
           </div>
         </div>
       </div>
@@ -177,21 +187,19 @@
         <div class="equip" id="equip">
           <div class="equip-content">
             <div class="filter"></div>
-            <img src="assets/equip.webp" alt="Light Theme" class="equip-bg" />
             <img
-              src="assets/equip_alt.webp"
-              alt="Dark Theme"
+              src="assets/all_items.png"
+              alt="Light Theme"
               class="equip-bg"
-              id="equip-bg-alt"
             />
-            <div class="equip-mode-switcher">
+            <!-- <div class="equip-mode-switcher">
               <div class="switcher-tooltip">
                 <div class="switcher-desk-text">Сменить освещение</div>
 
                 <i class="fa-solid fa-angle-right"></i>
               </div>
               <i class="fa-regular fa-lightbulb"></i>
-            </div>
+            </div> -->
             <div
               class="equip-dot"
               data-index="1"
@@ -207,7 +215,7 @@
                     Apollo Twin X DUO Heritage Edition
                   </div>
                   <div class="dot-popup-desk">
-                    позволяет музыкантам и продюсерам легко отслеживать,
+                    Позволяет музыкантам и продюсерам легко отслеживать,
                     накладывать и микшировать с помощью аналого-цифрового и
                     цифро-аналогового преобразования элитного класса
                   </div>
@@ -228,7 +236,7 @@
                 <div class="dot-popup-content">
                   <div class="dot-popup-headline">Rode NT1</div>
                   <div class="dot-popup-desk">
-                    предлагает детализированную среднечастотную характеристику в
+                    Предлагает детализированную среднечастотную характеристику в
                     сочетании с гладкими высокими частотами и округлым басом,
                     что делает NT1 абсолютным лидером в своем классе.
                   </div>
@@ -264,7 +272,6 @@
               data-targetsize="0.05"
             >
               <div class="equip-dot-popup">
-                <img src="" alt="" />
                 <div class="dot-popup-content">
                   <div class="dot-popup-headline">Живчик 2л</div>
                   <div class="dot-popup-desk">
@@ -277,10 +284,57 @@
               </div>
             </div>
           </div>
+          <div class="equip-content-mob">
+            <div class="headline-mob equip-headline-mob">Обладнання</div>
+            <div class="equip-item-mob first-item">
+              <img class="item-mob-img" src="assets/all_items.png" alt="" />
+              <div class="item-mob-text">
+                У нашій студії ми використовуємо сучасне та професійне
+                обладнання, яке допоможе Вам здійснити будь-яку музичну ідею. Ми
+                розуміємо, наскільки важливо мати якісне та надійне обладнання
+                для здійснення кращих записів та виступів, тому вкладаємо
+                зусилля у те, щоб мати тільки найкраще.
+              </div>
+            </div>
+            <div class="equip-item-mob">
+              <img class="item-mob-img" src="assets/s2.png" alt="" />
+              <div style="font-size: 2vh" class="item-mob-headline">
+                Apollo Twin X DUO Heritage Edition
+              </div>
+              <div class="item-mob-text">
+                <div class="item-mob-img-title">Звукова карта</div>
+                Позволяет музыкантам и продюсерам легко отслеживать, накладывать
+                и микшировать с помощью аналого-цифрового и цифро-аналогового
+                преобразования элитного класса
+              </div>
+            </div>
+            <div class="equip-item-mob">
+              <img class="item-mob-img" src="assets/mic.png" alt="" />
+              <div class="item-mob-headline">Rode NT1</div>
+              <div class="item-mob-text">
+                <div class="item-mob-img-title">Мікрофон</div>
+                Предлагает детализированную среднечастотную характеристику в
+                сочетании с гладкими высокими частотами и округлым басом, что
+                делает NT1 абсолютным лидером в своем классе.
+              </div>
+            </div>
+
+            <div class="equip-item-mob">
+              <img class="item-mob-img" src="assets/monitor.png" alt="" />
+              <div class="item-mob-headline">ADAM A7V</div>
+              <div class="item-mob-text">
+                <div class="item-mob-img-title">Монітори</div>
+                Мониторы ADAM Audio заслужили всемирную репутацию превосходного
+                инструмента для звукорежиссеров, основанного на технологических
+                инновациях.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="section">
+        <div class="headline-mob">Ціни</div>
         <div class="price" id="price">
           <div class="price-no-click"></div>
           <img src="assets/price_mobile.webp" class="price-mob-bg" alt="" />
@@ -302,15 +356,15 @@
                 <hr />
               </div>
 
-              <div class="price-card-title">Запись</div>
-              <div class="price-card-value">400 грн<span>/ час</span></div>
+              <div class="price-card-title">Запис</div>
+              <div class="price-card-value">400 грн<span>/ год</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente eius, quia doloremque dolorem, est maxime accusantium
-                provident officiis aspernatur, non unde eum ex veritatis odio
-                quo! Enim itaque optio ipsum.
+                Ми використовуємо високоякісне обладнання, щоб забезпечити вам
+                найкращий результат. Незалежно від того, чи ви записуєте свою
+                демо-версію, сингл або повноцінний альбом, ми готові допомогти
+                вам реалізувати ваш творчий потенціал.
               </div>
-              <button>Заказать</button>
+              <button>Замовити</button>
             </div>
             <div class="price-card">
               <div class="price-card-img">
@@ -318,15 +372,16 @@
                 <hr />
               </div>
 
-              <div class="price-card-title">Сведение</div>
+              <div class="price-card-title">Зведення</div>
               <div class="price-card-value">800 грн<span>/ трек</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente eius, quia doloremque dolorem, est maxime accusantium
-                provident officiis aspernatur, non unde eum ex veritatis odio
-                quo! Enim itaque optio ipsum.
+                Наша команда звертає увагу на кожну деталь вашого музичного
+                твору. Наші звукорежисери знають, як домогтися максимальної
+                якості та балансу у вашому музичному творі. Ми використовуємо
+                різні ефекти та техніки, щоб додати глибини, простору та
+                динаміки до вашого звуку.
               </div>
-              <button>Заказать</button>
+              <button>Замовити</button>
             </div>
             <div class="price-card">
               <div class="price-card-img">
@@ -334,60 +389,61 @@
                 <hr />
               </div>
 
-              <div class="price-card-title">Дистрибуция</div>
+              <div class="price-card-title">Дистрибуція</div>
               <div class="price-card-value">400 грн<span>/ трек</span></div>
               <div class="price-card-desk">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente eius, quia doloremque dolorem, est maxime accusantium
-                provident officiis aspernatur, non unde eum ex veritatis odio
-                quo! Enim itaque optio ipsum.
+                Наша музична студія допоможе вам розповсюдити вашу музику по
+                всьому світу. Ми знаємо, як правильно підготувати вашу музику до
+                дистрибуції, щоб забезпечити вам максимальний дохід від
+                продажів.
               </div>
-              <button>Заказать</button>
+              <button>Замовити</button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="section">
+        <div class="headline-mob">Приклади робіт</div>
         <div class="examples">
           <!-- <div class="headline"></div> -->
-          <img src="assets/examples_bg.webp" class="examples-bg" alt="" />
+          <img src="assets/mic.png" class="examples-bg" alt="" />
           <div class="examples-item-wrapper">
             <div class="examples-item">
               <div class="examples-item-title">
-                Guber - Ya Geniy (2022)
-                <span>Запись, Сведение, Мастеринг</span>
+                Guber - UA RAP-STARs (2023)
+                <span>Запиc, Зведення, Дистрибуція</span>
               </div>
               <div class="examples-item-spotify">
                 <iframe
-                  data-keepplaying
                   class="spotify"
-                  style="border-radius: 12px"
-                  src="https://open.spotify.com/embed/track/2nEeqUtNwQIHkv2q7sH8To?utm_source=generator"
+                  style="border-radius: 8px"
+                  src="https://open.spotify.com/embed/album/0qOay64VoKxZgxpAXJT0lB?utm_source=generator&theme=0"
                   width="100%"
-                  height="380"
+                  height="352"
                   frameborder="0"
                   allowfullscreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>
             <div class="examples-item">
               <div class="examples-item-title">
-                Guber - Ya Geniy (2022)
-                <span>Запись, Сведение, Мастеринг</span>
+                Guber - Mandem (2023)
+                <span>Запиc, Зведення, Дистрибуція</span>
               </div>
               <div class="examples-item-spotify">
                 <iframe
-                  data-keepplaying
-                  class="spotify"
-                  style="border-radius: 12px"
-                  src="https://open.spotify.com/embed/album/3X3Qai5keGxIrRY679Hfvr?utm_source=generator&theme=0"
+                  class="spotify-second"
+                  style="border-radius: 8px"
+                  src="https://open.spotify.com/embed/album/3XhdDZIgDjRtnvI7N9NA02?utm_source=generator&theme=0"
                   width="100%"
-                  height="380"
+                  height="352"
                   frameborder="0"
                   allowfullscreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>
@@ -396,6 +452,7 @@
       </div>
 
       <div class="section">
+        <div class="headline-mob">Контакти</div>
         <div class="contacts" id="contacts">
           <div class="contacts-items-wrapper">
             <div class="contacts-map">
@@ -409,11 +466,11 @@
             </div>
             <div class="contacts-info">
               <ul class="contacts-list">
-                <li>
+                <li class="calendar-list-item">
                   <i class="fa-solid fa-calendar-week calendar"></i>
                   <a href="#" id="hours">
-                    Пн-Пт: 10:00-23:00
-                    <span>Сб-Вс: 10:00-16:00</span>
+                    Пн-Пт: 10 - 22
+                    <span>Сб-Вс: 10 - 18</span>
                   </a>
                 </li>
                 <ul class="only-contacts">
@@ -433,13 +490,17 @@
                   </li>
                   <li>
                     <i class="fa-solid fa-square-phone"></i>
-                    <a href="tel:+380506511755">+ 380 ### ### ### </a>
+                    <a href="tel:+380506511755">+ 380 50 651 1755 </a>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a>Пр-т П. Григоренка, 5А</a>
                   </li>
                 </ul>
               </ul>
               <div class="contacts-form">
                 <div class="contacts-form-title">
-                  или заполните форму,
+                  заполните форму,
                   <span>мы свяжемся с вами в ближайшее время</span>
                 </div>
                 <input type="text" placeholder="Ваше имя" class="name" />

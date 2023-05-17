@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
   let arr = [...preloaderItems];
   arr.forEach((item) => {
     let sum = 400 + 400 * (+arr.indexOf(item) + 1);
-    console.log(sum);
     setTimeout(() => {
       item.animate([{ opacity: "100%" }, { opacity: "0%" }], {
         duration: 1800,
@@ -44,19 +43,18 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 2500);
     // Slider
     $(".slider").slick({
-      centerMode: true,
       touchMove: true,
       prevArrow: $("#prev"),
       nextArrow: $("#next"),
-      speed: 800,
+      speed: 900,
+      centerMode: true,
       variableWidth: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       dots: true,
       responsive: [
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
             centerMode: true,
             slidesToShow: 1,
           },
@@ -64,7 +62,6 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           breakpoint: 480,
           settings: {
-            arrows: false,
             centerMode: true,
             centerPadding: "40px",
             slidesToShow: 1,
@@ -72,106 +69,45 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       ],
     });
-    let a = -1000;
-    // $(".slider").on(
-    //   "beforeChange",
-    //   function (event, slick, currentSlide, nextSlide) {
-    //     const line = document.querySelector(".line");
-    //     let b;
-    //     currentSlide > nextSlide ? (b = a + 200) : (b = a - 200);
-    //     a = b;
-    //     line.animate([{ right: `${b}px` }], {
-    //       duration: 600,
-    //       fill: "forwards",
-    //     });
-    //   }
-    // );
     const headlines = document.querySelector(".headlines"),
       headlinesItems = document.querySelectorAll(".headline-item");
     headlinesItems.forEach((item) => {
       item.addEventListener("click", () => {
         headlines.style.top = "-10vh";
-        console.log("wtf");
       });
-    });
-    // Equip Mode Switch
-    const switcher = document.querySelector(".equip-mode-switcher"),
-      switcherBulb = document.querySelector(".fa-regular, .far "),
-      equipHeadline = document.querySelector("#equip-headline"),
-      equipBgLight = document.querySelector(".equip-bg"),
-      equipBgDark = document.querySelector("#equip-bg-alt");
-    let night = false;
-    if (window.innerWidth < 500) {
-      const switcherVibration = switcher.animate(
-        [{ top: "8vh" }, { top: "7.5vh" }, { top: "8vh" }],
-        {
-          duration: 1000,
-          fill: "forwards",
-          iterations: Infinity,
-        }
-      );
-
-      switcher.addEventListener(
-        "click",
-        () => {
-          switcherVibration.cancel();
-          clearInterval(switcherVibrationInterval);
-        },
-        { once: true }
-      );
-    }
-    function changeTheme() {
-      if (night == false) {
-        equipBgDark.animate([{ opacity: 0 }], {
-          duration: 500,
-          fill: "forwards",
-        });
-        equipBgLight.animate([{ opacity: 1 }], {
-          duration: 500,
-          fill: "forwards",
-        });
-        switcherBulb.style.filter = "invert(0)";
-        switcher.style.backgroundColor = "white";
-        equipHeadline.style.textShadow = "unset";
-      } else {
-        equipBgDark.animate([{ opacity: 1 }], {
-          duration: 500,
-          fill: "forwards",
-        });
-        equipBgLight.animate([{ opacity: 0 }], {
-          duration: 500,
-          fill: "forwards",
-        });
-        switcherBulb.style.filter = "invert(1)";
-        switcher.style.backgroundColor = "black";
-        equipHeadline.style.cssText =
-          "text-shadow: 0 0 5px #fff, 0 0 20px rgb(121, 86, 238),0 0 40px rgb(121, 86, 238), 0 0 80px rgb(121, 86, 238), 0 0 90px rgb(121, 86, 238), 0 0 100px rgb(121, 86, 238), 0 0 150px rgb(121, 86, 238);";
-      }
-    }
-    let animated = false;
-    switcher.addEventListener("click", () => {
-      night = !night;
-      changeTheme();
     });
     let orderOpen = false;
     const orderButton = document.querySelector(".intro-content-buttons button"),
       contactsIntro = document.querySelector("#contacts-intro"),
       introContent = document.querySelector(".intro-content"),
+      introBg = document.querySelector(".intro-bg"),
       closePopup = document.querySelector("#close-popup");
     closePopup.addEventListener("click", () => {
       contactsIntro.animate([{ right: "-120%" }], {
-        duration: 200,
+        duration: 400,
         fill: "forwards",
+      });
+    });
+    introBg.addEventListener("click", () => {
+      orderOpen = false;
+      contactsIntro.animate([{ right: "-120%" }], {
+        duration: 400,
+        fill: "forwards",
+      });
+      navItems.forEach((item) => {
+        item.animate([{ opacity: "100%" }], {
+          duration: 300,
+          fill: "forwards",
+        });
       });
     });
     contactsIntro.style.visibility = "initial";
     orderButton.addEventListener("click", () => {
-      console.log(contactsIntro.children);
       orderOpen = !orderOpen;
       if (orderOpen) {
-        if (window.innerWidth > 500) {
+        if (window.innerWidth >= 500) {
           contactsIntro.animate([{ right: "0px" }], {
-            duration: 300,
+            duration: 400,
             fill: "forwards",
           });
           navItems.forEach((item) => {
@@ -181,7 +117,6 @@ window.addEventListener("DOMContentLoaded", () => {
             });
           });
         } else {
-          console.log("small");
           contactsIntro.style.width = "100%";
           contactsIntro.animate([{ right: "0px" }], {
             duration: 300,
@@ -221,6 +156,15 @@ window.addEventListener("DOMContentLoaded", () => {
       item.addEventListener("mouseleave", () => {
         priceImgAnimation.cancel();
       });
+      item.addEventListener("click", (e) => {
+        if (e.target.tagName !== "BUTTON") {
+          orderOpen = false;
+          contactsIntro.animate([{ right: "-120%" }], {
+            duration: 400,
+            fill: "forwards",
+          });
+        }
+      });
     });
     const priceButtons = document.querySelectorAll(".price-card button"),
       priceNoClick = document.querySelector(".price-no-click");
@@ -234,16 +178,19 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     priceButtons.forEach((item) => {
       item.addEventListener("click", () => {
-        !orderOpen
-          ? contactsIntro.animate([{ right: "0px" }], {
-              duration: 200,
-              fill: "forwards",
-            })
-          : contactsIntro.animate([{ right: "-120%" }], {
-              duration: 200,
-              fill: "forwards",
-            });
-        orderOpen = !orderOpen;
+        if (!orderOpen) {
+          orderOpen = true;
+          contactsIntro.animate([{ right: "0px" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+        } else {
+          contactsIntro.animate([{ right: "-120%" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+          orderOpen = false;
+        }
       });
     });
     intro.addEventListener("click", (e) => {
@@ -274,36 +221,44 @@ window.addEventListener("DOMContentLoaded", () => {
         nav.style.display = "flex";
       });
     });
-    // To Top Button
-    // window.addEventListener("scroll", () => {
-    //   if (intro.getBoundingClientRect().top < -500) {
-    //     toTopButton.style.display = "flex";
-    //   } else {
-    //     toTopButton.style.display = "none";
-    //   }
-    // });
+
     let sections = [...document.querySelectorAll(".section")];
+
     //Fullpage
+
     new fullpage("#fullpage", {
-      responsiveWidth: 500,
+      responsiveWidth: 1000,
       autoScrolling: true,
       navigation: true,
       scrollHorizontally: false,
       fitToSection: true,
       navigationPosition: "left",
       scrollOverflow: true,
-      dragAndMove: true,
+      dragAndMove: false,
       touchSensitivity: 15,
-      normalScrollElements: ".price-card-wrapper",
+
       afterResponsive: function () {
         fullpage_api.setAllowScrolling(true);
       },
       onLeave: function (index, direction) {
-        fullpage.CurrentIndex = index.index;
-        sections[index.index].animate([{ opacity: "50%" }], {
-          duration: 200,
+        orderOpen = false;
+        contactsIntro.animate([{ right: "-120%" }], {
+          duration: 400,
           fill: "forwards",
         });
+        navItems.forEach((item) => {
+          item.animate([{ opacity: "100%" }], {
+            duration: 200,
+            fill: "forwards",
+          });
+        });
+
+        fullpage.CurrentIndex = index.index;
+        window.innerWidth > 768 &&
+          sections[index.index].animate([{ opacity: "50%" }], {
+            duration: 200,
+            fill: "forwards",
+          });
         sections[direction.index].animate([{ opacity: 1 }], {
           duration: 700,
           fill: "forwards",
@@ -361,14 +316,6 @@ window.addEventListener("DOMContentLoaded", () => {
             fill: "forwards",
           });
         });
-        if (index.index === 2) {
-          if (animated == false) {
-            animated = true;
-            changeTheme();
-          } else {
-            return;
-          }
-        }
       },
     });
 
@@ -499,33 +446,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Equip Mode Switch
-
-  const scrollSwitch = () => {
-    if (intro.getBoundingClientRect().top < -1450) {
-      setTimeout(() => {
-        // equipHeadlineLight.finish();
-        // equipFilterLight.finish();
-      }, 701);
-      // equipHeadline.style.color ='white';
-      // equipHeadline.style.opacity ='1';
-      window.removeEventListener("scroll", scrollSwitch);
-    }
-  };
-  window.addEventListener("scroll", scrollSwitch);
-
-  // Equip Hide Tooltip
-  const switcherToolTip = document.querySelector(".switcher-tooltip");
-  function hideTooltip(a) {
-    a.animate([{ opacity: "0" }], { duration: 300, fill: "forwards" });
-    setTimeout(() => {
-      a.style.display = "none";
-    }, 500);
-  }
-  switcherToolTip.addEventListener("mouseenter", () => {
-    hideTooltip(switcherToolTip);
-  });
-
   // Price
 
   // Navigation
@@ -542,7 +462,7 @@ window.addEventListener("DOMContentLoaded", () => {
     fullpage_api.moveTo(6);
   });
   logo.addEventListener("click", () => {
-    document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
+    fullpage_api.moveTo(1);
   });
   const adress = document.querySelector("#adress");
   navArr.forEach((item) => {
@@ -580,7 +500,6 @@ window.addEventListener("DOMContentLoaded", () => {
   navLi.forEach((item) => {
     item.addEventListener("click", () => {
       if (window.innerWidth < 600) {
-        console.log(window.innerWidth);
         burgerActive = false;
         navBurger.removeAttribute("class", "open");
         nav.animate([{ height: "10vh" }], { duration: 200, fill: "forwards" });
