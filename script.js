@@ -6,42 +6,41 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log(e.target);
   });
   const preloader = document.querySelector(".preloader"),
-    price = document.querySelector(".price"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
-    intro = document.querySelector(".intro"),
-    priceBg = document.querySelector(".price-bg");
+    intro = document.querySelector(".intro");
   let arr = [...preloaderItems];
   arr.forEach((item) => {
-    let sum = 400 + 400 * (+arr.indexOf(item) + 1);
-    setTimeout(() => {
-      item.animate([{ opacity: "100%" }, { opacity: "0%" }], {
-        duration: 1800,
-        iterations: Infinity,
-      });
-    }, sum);
+    let sum = 100 + 100 * (+arr.indexOf(item) + 1);
+    item.animate([{ opacity: "100%" }], {
+      duration: 100,
+      delay: sum,
+      fill: "forwards",
+    });
   });
   const nav = document.querySelector("nav");
 
   window.addEventListener("load", () => {
     nav.animate([{ opacity: "100%" }], {
-      delay: 1800,
-      duration: 1800,
+      delay: 1600,
+      duration: 1600,
       fill: "forwards",
     });
     intro.animate([{ opacity: "100%" }], {
       delay: 1800,
-      duration: 1800,
+      duration: 1600,
       fill: "forwards",
     });
     preloader.animate([{ opacity: "100%" }, { opacity: "0%" }], {
       delay: 1000,
-      duration: 1800,
+      duration: 1600,
       fill: "forwards",
     });
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 2500);
+    }, 2300);
+
     // Slider
+    let currentSlide = 0;
     $(".slider").slick({
       touchMove: true,
       prevArrow: $("#prev"),
@@ -69,6 +68,54 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       ],
     });
+    $(".slider").on("afterChange", (a, b) => {
+      currentSlide = b.currentSlide;
+    });
+    // Change slide on hover first image
+    const guber = document.querySelector("#guber"),
+      slider = document.querySelector(".slider"),
+      firstSlide = document.querySelector(".first");
+    if (window.innerWidth > 1000) {
+      guber.addEventListener("mouseenter", function () {
+        if (currentSlide === 0) {
+          firstSlide.animate(
+            { filter: ["blur(0)", "blur(" + 5 + "px)"] },
+            { duration: 300, fill: "forwards" }
+          );
+          setTimeout(() => {
+            firstSlide.src = "assets/s4.webp";
+            firstSlide.animate(
+              { filter: ["blur(" + 5 + "px)", "blur(0)"] },
+              { duration: 100, fill: "forwards" }
+            );
+          }, 200);
+        }
+      });
+
+      guber.addEventListener("mouseleave", function () {
+        if (currentSlide === 0) {
+          firstSlide.animate(
+            { filter: ["blur(0)", "blur(" + 10 + "px)"] },
+            { duration: 300, fill: "forwards" }
+          );
+          setTimeout(() => {
+            firstSlide.src = "assets/s1.webp";
+            firstSlide.animate(
+              { filter: ["blur(" + 10 + "px)", "blur(0)"] },
+              { duration: 100, fill: "forwards" }
+            );
+          }, 200);
+        }
+      });
+    }
+    if (window.innerWidth < 1000) {
+      $(".slider").slick(
+        "slickAdd",
+        '<img src="assets/s4.webp" alt="Third Slide" />'
+      );
+    }
+    // Headlines
+
     const headlines = document.querySelector(".headlines"),
       headlinesItems = document.querySelectorAll(".headline-item");
     headlinesItems.forEach((item) => {
@@ -331,6 +378,7 @@ window.addEventListener("DOMContentLoaded", () => {
       marker.setMap(map);
     }
     initMap();
+
     //Telegram Post (Send Message) Request
     const telegramToken = "5047013850:AAExDJksx6jmAqdZwnX6bBYI_mBG-avC0rg",
       chatId = "-1001616261182",
@@ -346,8 +394,6 @@ window.addEventListener("DOMContentLoaded", () => {
         let index = submitButtons.indexOf(item),
           tel = telInputs[index].value,
           name = nameInputs[index].value;
-        console.log(tel.length);
-        console.log(name);
         if (
           name.length < 1 ||
           (tel.includes("+") && tel.length != 13) ||
@@ -355,28 +401,53 @@ window.addEventListener("DOMContentLoaded", () => {
           tel.length < 10
         ) {
           formTitle[index].innerHTML =
-            "Ошибка!<span> Проверьте корректность данных</span>";
-          return;
-        } else nameInputs[index].style.display = "none";
-        telInputs[index].style.display = "none";
-        spinner[index].style.display = "flex";
-        spinner[index].style.marginBottom = "90px";
-        // success[index].style.marginBottom = "90px";
-        submitButtons[index].style.display = "none";
-        // %2B = plus
-        axios
-          .post(
-            `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=Имя: ${name}%0AНомер: ${tel}`
-          )
-          .then(function (response) {
-            spinner[index].style.display = "none";
-            success[index].style.display = "block";
+            "Помилка!<span> Перевірте коректність даних</span>";
+          setTimeout(() => {
             formTitle[index].innerHTML =
-              "Спасибо! <span>Ваша заявка принята</span>";
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+              "Заповніть форму <span>Ми зв`яжемося з вами якнайшвидше</span>";
+            nameInputs[index].value = "";
+            telInputs[index].value = "+380";
+          }, 2000);
+          return;
+        } else {
+          nameInputs[index].style.display = "none";
+          telInputs[index].style.display = "none";
+          spinner[index].style.display = "flex";
+          spinner[index].style.marginBottom = "90px";
+          // success[index].style.marginBottom = "90px";
+          submitButtons[index].style.display = "none";
+          // %2B = plus
+          axios
+            .post(
+              `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=Имя: ${name}%0AНомер: ${tel}`
+            )
+            .then(() => {
+              spinner[index].style.display = "none";
+              success[index].style.display = "block";
+              formTitle[index].innerHTML =
+                "Спасибо! <span>Ваша заявка принята</span>";
+              setTimeout(() => {
+                success[index].style.display = "none";
+                nameInputs[index].style.display = "flex";
+                telInputs[index].style.display = "flex";
+                formTitle[index].innerHTML =
+                  "Заповніть форму <span>Ми зв`яжемося з вами якнайшвидше</span>";
+                submitButtons[index].style.display = "block";
+                nameInputs[index].value = "";
+                telInputs[index].value = "+380";
+              }, 2000);
+            })
+            .catch(function (error) {
+              formTitle[index].innerHTML =
+                "Помилка!<span> Спробуйте ще раз пізніше</span>";
+              setTimeout(() => {
+                formTitle[index].innerHTML =
+                  "Заповніть форму <span>Ми зв`яжемося з вами якнайшвидше</span>";
+                nameInputs[index].value = "";
+                telInputs[index].value = "+380";
+              }, 2000);
+            });
+        }
       });
     });
   });
@@ -468,15 +539,19 @@ window.addEventListener("DOMContentLoaded", () => {
   navArr.forEach((item) => {
     item.addEventListener("click", (e) => {
       console.log(fullpage_api.getActiveSection());
-      e.target === navArr[0]
-        ? fullpage_api.moveTo(3)
-        : e.target === navArr[1]
-        ? fullpage_api.moveTo(6)
-        : e.target === navArr[2]
-        ? fullpage_api.moveTo(4)
-        : console.log("1");
+
+      if (e.target === navArr[0]) {
+        fullpage_api.moveTo(3);
+      }
+      if (e.target === navArr[1]) {
+        fullpage_api.moveTo(6);
+      }
+      if (e.target === navArr[2]) {
+        fullpage_api.moveTo(4);
+      }
     });
   });
+
   adress.addEventListener("click", () => {
     fullpage_api.moveTo(6);
   });

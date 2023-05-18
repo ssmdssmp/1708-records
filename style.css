@@ -14,6 +14,7 @@ body {
   padding: 0;
   background-color: black;
   font-family: "Lato", sans-serif;
+  overflow-x: hidden !important;
 }
 #close-popup {
   z-index: 20001;
@@ -30,7 +31,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  font-size: 120px;
+  font-size: 10vh;
   color: white;
   display: flex;
   justify-content: center;
@@ -45,6 +46,9 @@ body {
 }
 .preloader div:hover {
   opacity: 1;
+}
+.pre-items-rec {
+  color: var(--main-color);
 }
 .main {
   display: none;
@@ -193,7 +197,7 @@ nav ul {
   z-index: 15;
   display: flex;
   list-style: none;
-  gap: 3vw;
+  gap: 4vw;
   align-items: center;
   font-size: 2vh;
   justify-content: end;
@@ -218,8 +222,9 @@ nav li:hover {
   text-transform: uppercase;
 }
 .logo span {
+  margin-left: 1vh;
   transition: color 0.3s linear;
-  text-shadow: 1px 2px rgba(64, 18, 215, 0.6);
+  color: var(--main-color);
 }
 .logo span {
   color: var(--main-color);
@@ -272,8 +277,16 @@ nav li:hover {
   font-size: 28px;
   color: white;
 }
-.intro h1 {
-  font-size: 50px;
+.intro-content-text h2 {
+  font-size: 6vh;
+  margin: 0;
+  padding: 0;
+}
+.intro-content-text h2 span {
+  color: var(--main-color);
+}
+.intro-content-text h1 {
+  font-size: 6vh;
   margin: 0;
   padding: 0;
 }
@@ -501,6 +514,14 @@ li.slick-active button {
   top: 0;
   right: 0;
 }
+.change-slide-by-hover {
+  position: absolute;
+  height: 90vh;
+  width: 50vw;
+  left: 0;
+  z-index: 4;
+}
+
 #next:hover,
 #prev:hover {
   opacity: 0.6;
@@ -532,8 +553,8 @@ li.slick-active button {
   left: 15%;
 }
 #zhivchik {
-  bottom: 10%;
-  left: 10%;
+  bottom: 40%;
+  right: 5%;
   font-size: 14px;
 }
 .equip-dot-popup {
@@ -543,7 +564,8 @@ li.slick-active button {
   display: none;
   width: 30vw;
   opacity: 0;
-  height: 20vh;
+  height: fit-content;
+  padding: 1vh 0;
   backdrop-filter: blur(20px) saturate(0%);
   -webkit-backdrop-filter: blur(20px) saturate(0%);
   background-color: rgba(121, 86, 238, 0.57);
@@ -560,10 +582,11 @@ li.slick-active button {
 }
 #adam .equip-dot-popup {
   left: -10vw;
-  top: 5vh;
+  top: -20vh;
 }
 #zhivchik .equip-dot-popup {
-  top: -25vh;
+  top: 5vh;
+  left: -50vh;
 }
 
 .dot-popup-content {
@@ -876,7 +899,7 @@ li.slick-active button {
 }
 .contacts-list {
   text-transform: uppercase;
-  padding: 0px 3vw;
+  padding: 0;
   margin: 0px;
   display: flex;
   flex-direction: column;
@@ -942,7 +965,7 @@ li.slick-active button {
   align-items: center;
   gap: 2vh;
   justify-content: start;
-  width: 500px;
+  height: 35vh;
 }
 .contacts-form-title {
   font-size: 3vh;
@@ -958,13 +981,14 @@ li.slick-active button {
   display: block;
   font-size: 2vh;
   margin-top: 10px;
+  text-align: center;
 }
 input {
   font-size: 15px;
   font-size: 2vh;
   display: block;
   height: 50px;
-  width: 400px;
+  width: 100%;
   background-color: #fff;
   border: none;
   border-radius: 3px;
@@ -979,7 +1003,7 @@ input {
   border-radius: 3px;
   color: white;
   text-transform: uppercase;
-  width: 400px;
+  width: 100%;
   height: 50px;
   font-size: 2vh;
 }
@@ -1033,6 +1057,9 @@ input {
 @media (max-width: 1000px) {
   .fp-overflow.fp-table {
     display: unset;
+  }
+  .preloader {
+    font-size: 4vh;
   }
   .section {
     justify-content: start;
@@ -1211,7 +1238,10 @@ input {
   .intro {
     background-position: -500px;
   }
-  .intro h1 {
+  .intro-content-text h1 {
+    font-size: 4vh;
+  }
+  .intro-content-text h2 {
     font-size: 4vh;
   }
   .intro a {
@@ -1227,7 +1257,6 @@ input {
   #contacts-intro {
     width: 100%;
     gap: 3vh;
-    right: 100vw;
     padding: 10vh 3vw;
     background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
@@ -1335,6 +1364,13 @@ input {
   .slick-center {
     transition: 0;
     transform: none;
+  }
+  .slider img {
+    transition: opacity 0.3s ease;
+  }
+
+  .slider .transitioning img {
+    opacity: 0;
   }
   .slick-track {
     height: fit-content;
@@ -1474,6 +1510,7 @@ input {
     flex-direction: column-reverse;
     justify-content: space-between;
     padding: 2vh 0;
+    width: 100vw;
   }
   .contacts-map {
     height: fit-content;
@@ -1481,9 +1518,13 @@ input {
   .contacts-headline {
     margin-top: 7vh;
   }
+  .pre-items {
+    opacity: 0;
+  }
+
   .map {
     width: 92vw;
-    height: 23vh;
+    height: 21vh;
   }
   input {
     width: 100%;
@@ -1508,14 +1549,13 @@ input {
   .contacts-form-title span {
     font-size: 1.7vh;
     margin-top: 0.5vh;
-    text-align: center;
   }
   .contacts-list {
     padding: 0;
     height: 25vh;
     width: 100%;
     text-transform: uppercase;
-    padding: 0 2vw;
+    padding: 0 4vw;
   }
 
   .contacts-list i,
@@ -1589,13 +1629,12 @@ input {
 }
 
 /* Equip Media */
-@media (max-width: 913px) {
-  #rode {
-    left: 20%;
-    top: 35%;
+@media (max-width: 1180px) {
+  #apolo {
+    bottom: 20%;
   }
   #zhivchik {
-    left: 5%;
+    bottom: 60%;
   }
 }
 @media (max-width: 821px) {
