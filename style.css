@@ -1263,7 +1263,7 @@ input {
   }
   .intro-content {
     padding: 0 3vw;
-    margin-bottom: 2vh;
+    margin-bottom: 7vh;
   }
   .intro {
     background-position: -500px;
@@ -1300,7 +1300,7 @@ input {
     display: none;
   }
   .slick-track {
-    height: 90vh;
+    height: auto;
     width: 100vw;
   }
   .line {
@@ -1411,6 +1411,9 @@ input {
   .slick-track img {
     width: 100vw;
   }
+  .change-slide-by-hover {
+    display: none;
+  }
   .gallery {
     height: fit-content;
     align-items: center;
@@ -1493,6 +1496,7 @@ input {
   .examples-item-wrapper {
     height: fit-content;
     margin-top: 0;
+    height: 75vh;
     width: 90vw;
     justify-content: space-around;
   }
@@ -1602,6 +1606,7 @@ input {
     align-items: center;
     width: 100%;
     gap: 3vh;
+    height: auto;
   }
 
   .contacts-form {
