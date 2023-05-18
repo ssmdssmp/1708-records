@@ -966,6 +966,8 @@ li.slick-active button {
   gap: 2vh;
   justify-content: start;
   height: 35vh;
+  width: 100%;
+  max-width: 500px;
 }
 .contacts-form-title {
   font-size: 3vh;
