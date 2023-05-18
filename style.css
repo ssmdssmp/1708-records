@@ -897,6 +897,9 @@ li.slick-active button {
   height: 84vh;
   justify-content: space-between;
 }
+.contacts-info .popup {
+  padding: 0 2vw;
+}
 .contacts-list {
   text-transform: uppercase;
   padding: 0;
@@ -908,6 +911,30 @@ li.slick-active button {
   font-size: 3vh;
 }
 
+.contacts-list .popup {
+  flex-direction: column-reverse;
+  gap: 3vh;
+  text-transform: uppercase;
+}
+.first-popup-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
+}
+.first-popup-list-item a {
+  font-size: 20px;
+}
+.first-popup-list-item a span {
+  margin-top: 25px;
+  font-size: 20px;
+  display: unset;
+  color: var(--main-color);
+}
+.first-popup-list-item-icon {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
 .calendar-list-item {
   margin-bottom: 5vh;
 }
@@ -915,7 +942,7 @@ li.slick-active button {
   text-align: center;
   text-transform: uppercase;
   font-size: 3vh;
-  margin-top: 14vh;
+  margin-top: 9vh;
   margin-bottom: 3vh;
 }
 .only-contacts {
@@ -1573,6 +1600,7 @@ input {
     width: 100%;
     gap: 3vh;
   }
+
   .contacts-form {
     width: 92vw;
     margin-top: 3vh;

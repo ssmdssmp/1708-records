@@ -1,10 +1,10 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("nav");
+
   // Preloader
-  document.body.addEventListener("click", (e) => {
-    console.log(e.target);
-  });
+
   const preloader = document.querySelector(".preloader"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
     intro = document.querySelector(".intro");
@@ -17,16 +17,17 @@ window.addEventListener("DOMContentLoaded", () => {
       fill: "forwards",
     });
   });
-  const nav = document.querySelector("nav");
 
   window.addEventListener("load", () => {
+    // From loader to content
+
     nav.animate([{ opacity: "100%" }], {
       delay: 1600,
       duration: 1600,
       fill: "forwards",
     });
     intro.animate([{ opacity: "100%" }], {
-      delay: 1800,
+      delay: 1600,
       duration: 1600,
       fill: "forwards",
     });
@@ -40,6 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 2300);
 
     // Slider
+
     let currentSlide = 0;
     $(".slider").slick({
       touchMove: true,
@@ -71,9 +73,10 @@ window.addEventListener("DOMContentLoaded", () => {
     $(".slider").on("afterChange", (a, b) => {
       currentSlide = b.currentSlide;
     });
+
     // Change slide on hover first image
+
     const guber = document.querySelector("#guber"),
-      slider = document.querySelector(".slider"),
       firstSlide = document.querySelector(".first");
     if (window.innerWidth > 1000) {
       guber.addEventListener("mouseenter", function () {
@@ -109,11 +112,14 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
     if (window.innerWidth < 1000) {
+      //add item to slider if mobile
+
       $(".slider").slick(
         "slickAdd",
         '<img src="assets/s4.webp" alt="Third Slide" />'
       );
     }
+
     // Headlines
 
     const headlines = document.querySelector(".headlines"),
@@ -123,6 +129,9 @@ window.addEventListener("DOMContentLoaded", () => {
         headlines.style.top = "-10vh";
       });
     });
+
+    // Toggle form appearance
+
     let orderOpen = false;
     const orderButton = document.querySelector(".intro-content-buttons button"),
       contactsIntro = document.querySelector("#contacts-intro"),
@@ -414,7 +423,6 @@ window.addEventListener("DOMContentLoaded", () => {
           telInputs[index].style.display = "none";
           spinner[index].style.display = "flex";
           spinner[index].style.marginBottom = "90px";
-          // success[index].style.marginBottom = "90px";
           submitButtons[index].style.display = "none";
           // %2B = plus
           axios
@@ -453,11 +461,12 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Equip Items
+
   const equip = document.querySelector(".filter"),
     equipDot = document.querySelectorAll(".equip-dot"),
     rode = document.querySelector("#rode");
-  let equipArr = [...equipDot];
-  let dotActive = false;
+  let equipArr = [...equipDot],
+    dotActive = false;
   rode.firstElementChild.style.display = "flex";
   rode.firstElementChild.style.opacity = "1";
   equipArr.forEach((item) => {
@@ -517,8 +526,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Price
-
   // Navigation
 
   const navItems = document.querySelectorAll("nav ul li"),
@@ -526,9 +533,7 @@ window.addEventListener("DOMContentLoaded", () => {
     toContactsButton = document.querySelector(
       ".intro-content-buttons button:nth-child(2)"
     ),
-    logo = document.querySelector(".logo"),
-    toTopButton = document.querySelector(".to-top");
-  // section =document.querySelectorAll('.section');
+    logo = document.querySelector(".logo");
   toContactsButton.addEventListener("click", () => {
     fullpage_api.moveTo(6);
   });
@@ -555,7 +560,9 @@ window.addEventListener("DOMContentLoaded", () => {
   adress.addEventListener("click", () => {
     fullpage_api.moveTo(6);
   });
+
   // Nav Burger
+
   const navBurger = document.querySelector("#nav-icon1"),
     navUl = nav.querySelector("ul"),
     navLi = navUl.querySelectorAll("li");
