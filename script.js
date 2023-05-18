@@ -234,6 +234,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     priceButtons.forEach((item) => {
       item.addEventListener("click", () => {
+        console.log(orderOpen);
         if (!orderOpen) {
           orderOpen = true;
           contactsIntro.animate([{ right: "0px" }], {
