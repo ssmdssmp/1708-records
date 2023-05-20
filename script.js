@@ -43,6 +43,17 @@ window.addEventListener("DOMContentLoaded", () => {
     // Slider
 
     let currentSlide = 0;
+
+    $(".slider").on("init", () => {
+      const slides = document.querySelectorAll(".slick-slide");
+
+      const slideHeight = slides[0].offsetHeight + "px";
+      slides.forEach((slide) => {
+        slide.style.height = slideHeight;
+        console.log(slide.style.height);
+      });
+    });
+
     $(".slider").slick({
       touchMove: true,
       prevArrow: $("#prev"),
