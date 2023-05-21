@@ -1108,7 +1108,7 @@ input {
   }
   .section:nth-child(2) {
     height: fit-content;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .section:nth-child(4) {
     height: fit-content;
