@@ -1288,7 +1288,7 @@ input {
   #contacts-intro {
     width: 100%;
     gap: 3vh;
-    padding: 10vh 3vw;
+    padding: 6vh 5vw;
     background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
   }
@@ -1554,7 +1554,7 @@ input {
     height: fit-content;
   }
   .contacts-headline {
-    margin-top: 2vh;
+    margin-top: 0;
   }
   .pre-items {
     opacity: 0;
