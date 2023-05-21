@@ -45,37 +45,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let currentSlide = 0;
 
-    $(".slider").on("init", () => {
-      const all = document.querySelectorAll("*");
-
-      all.forEach((item) => {
-        item.style.height = item.offsetHeight + "px";
-        item.style.overflow = "hidden";
-      });
-
-      // const slides = document.querySelectorAll(".slick-slide");
-      // const slideImages = document.querySelectorAll(".slider-image");
-      // const slideHeight = slides[0].offsetHeight + "px";
-      // const sections = document.querySelectorAll(".section");
-      // const gallery = document.querySelector(".gallery");
-      // const slickList = document.querySelector(".slick-list");
-      // const slider = document.querySelector(".slider");
-      // sections[1].style.height = sections[1].offsetHeight + "px";
-      // sections[0].style.height = sections[0].offsetHeight + "px";
-      // intro.style.height = intro.offsetHeight + "px";
-      // introBg.style.height = introBg.offsetHeight + "px";
-      // gallery.style.height = gallery.offsetHeight + "px";
-      // slickList.style.height = slickList.offsetHeight + "px";
-      // slider.style.height = slider.offsetHeight + "px";
-      // slides.forEach((slide) => {
-      //   slide.style.height = slideHeight;
-      // });
-      // slideImages.forEach((slide) => {
-      //   slide.style.height = slideHeight;
-      //   console.log(slide);
-      // });
-    });
-
     $(".slider").slick({
       touchMove: true,
       prevArrow: $("#prev"),
@@ -623,4 +592,10 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+window.addEventListener("resize", (e) => {
+  if (window.innerWidth < 1000) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
 });
