@@ -1092,13 +1092,14 @@ input {
   }
   .section {
     justify-content: start;
+    height: fit-content;
+  }
+  .section:nth-child(1) {
+    height: fit-content;
   }
   .section:nth-child(3) {
     height: fit-content;
     justify-content: start;
-  }
-  .equip-headline-mob {
-    height: auto;
   }
   .fullpage {
     display: flex;
@@ -1177,7 +1178,7 @@ input {
     display: block;
     z-index: 3;
     text-transform: uppercase;
-    margin: 5vh 0;
+    padding: 20px 0;
   }
   .nav-icon {
     position: static;
@@ -1263,7 +1264,7 @@ input {
   }
   .intro-content {
     padding: 0 3vw;
-    margin-bottom: 7vh;
+    margin-bottom: 0;
   }
   .intro {
     background-position: -500px;
@@ -1278,7 +1279,7 @@ input {
     font-size: 3vh;
   }
   .intro-content-buttons {
-    margin-bottom: 5vh;
+    margin-bottom: 70px;
     width: 100%;
   }
   .break-intro-gallery {

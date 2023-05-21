@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const preloader = document.querySelector(".preloader"),
     preloaderItems = preloader.querySelectorAll(".pre-items"),
+    introBg = document.querySelector(".intro-bg"),
     intro = document.querySelector(".intro");
   let arr = [...preloaderItems];
   arr.forEach((item) => {
@@ -45,13 +46,34 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
 
     $(".slider").on("init", () => {
-      const slides = document.querySelectorAll(".slick-slide");
+      const all = document.querySelectorAll("*");
 
-      const slideHeight = slides[0].offsetHeight + "px";
-      slides.forEach((slide) => {
-        slide.style.height = slideHeight;
-        console.log(slide.style.height);
+      all.forEach((item) => {
+        item.style.height = item.offsetHeight + "px";
+        item.style.overflow = "hidden";
       });
+
+      // const slides = document.querySelectorAll(".slick-slide");
+      // const slideImages = document.querySelectorAll(".slider-image");
+      // const slideHeight = slides[0].offsetHeight + "px";
+      // const sections = document.querySelectorAll(".section");
+      // const gallery = document.querySelector(".gallery");
+      // const slickList = document.querySelector(".slick-list");
+      // const slider = document.querySelector(".slider");
+      // sections[1].style.height = sections[1].offsetHeight + "px";
+      // sections[0].style.height = sections[0].offsetHeight + "px";
+      // intro.style.height = intro.offsetHeight + "px";
+      // introBg.style.height = introBg.offsetHeight + "px";
+      // gallery.style.height = gallery.offsetHeight + "px";
+      // slickList.style.height = slickList.offsetHeight + "px";
+      // slider.style.height = slider.offsetHeight + "px";
+      // slides.forEach((slide) => {
+      //   slide.style.height = slideHeight;
+      // });
+      // slideImages.forEach((slide) => {
+      //   slide.style.height = slideHeight;
+      //   console.log(slide);
+      // });
     });
 
     $(".slider").slick({
@@ -147,7 +169,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const orderButton = document.querySelector(".intro-content-buttons button"),
       contactsIntro = document.querySelector("#contacts-intro"),
       introContent = document.querySelector(".intro-content"),
-      introBg = document.querySelector(".intro-bg"),
       closePopup = document.querySelector("#close-popup");
     closePopup.addEventListener("click", () => {
       contactsIntro.animate([{ right: "-120%" }], {
@@ -170,6 +191,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     contactsIntro.style.visibility = "initial";
     orderButton.addEventListener("click", () => {
+      console.log(1);
       orderOpen = !orderOpen;
       if (orderOpen) {
         if (window.innerWidth >= 500) {
@@ -235,7 +257,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     const priceButtons = document.querySelectorAll(".price-card button"),
       priceNoClick = document.querySelector(".price-no-click");
-
+    console.log(priceButtons, priceNoClick);
     priceNoClick.addEventListener("click", () => {
       contactsIntro.animate([{ right: "-120%" }], {
         duration: 300,
@@ -245,7 +267,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     priceButtons.forEach((item) => {
       item.addEventListener("click", () => {
-        console.log(orderOpen);
+        console.log(1);
         if (!orderOpen) {
           orderOpen = true;
           contactsIntro.animate([{ right: "0px" }], {
@@ -321,24 +343,24 @@ window.addEventListener("DOMContentLoaded", () => {
           });
         });
 
-        fullpage.CurrentIndex = index.index;
-        window.innerWidth > 768 &&
-          sections[index.index].animate([{ opacity: "50%" }], {
-            duration: 200,
-            fill: "forwards",
-          });
+        sections[index.index].animate([{ opacity: "50%" }], {
+          duration: 200,
+          fill: "forwards",
+        });
         sections[direction.index].animate([{ opacity: 1 }], {
           duration: 700,
           fill: "forwards",
         });
-        headlines.animate([{ top: `-${10 * direction.index}vh` }], {
-          duration: 500,
-          fill: "forwards",
-        });
-        headlines.animate(
-          [{ opacity: "70%", textColor: "rgba(121, 86, 238,1)" }],
-          { duration: 500, fill: "forwards" }
-        );
+        if (window.innerWidth > 1000) {
+          headlines.animate([{ top: `-${10 * direction.index}vh` }], {
+            duration: 500,
+            fill: "forwards",
+          });
+          headlines.animate(
+            [{ opacity: "70%", textColor: "rgba(121, 86, 238,1)" }],
+            { duration: 500, fill: "forwards" }
+          );
+        }
         direction.index === 0
           ? (document.querySelector("#fp-nav").style.display = "none")
           : direction.index === 1
