@@ -1178,7 +1178,7 @@ input {
     display: block;
     z-index: 3;
     text-transform: uppercase;
-    padding: 20px 0;
+    padding: 5vh 0;
   }
   .nav-icon {
     position: static;
@@ -1279,7 +1279,7 @@ input {
     font-size: 3vh;
   }
   .intro-content-buttons {
-    margin-bottom: 70px;
+    margin-bottom: 13vh;
     width: 100%;
   }
   .break-intro-gallery {
