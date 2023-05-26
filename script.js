@@ -593,6 +593,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Responsive fix iphone
+
 window.addEventListener("resize", (e) => {
   if (window.innerWidth < 1000) {
     e.preventDefault();
