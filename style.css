@@ -732,6 +732,22 @@ li.slick-active button {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 38px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  height: 38px;
+}
+.price-card-value-from {
+  font-size: 15px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+.price-card-value-text {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+  height: 100%;
 }
 .price-card-value span {
   color: rgb(144, 211, 255);
@@ -770,7 +786,7 @@ li.slick-active button {
   font-weight: 300;
   text-align: center;
   height: 45%;
-  font-size: 2vh;
+  font-size: 18px;
 }
 .examples-wrapper {
   height: 100vh;
@@ -1083,6 +1099,14 @@ input {
 .price-card button:hover,
 .submit:hover {
   background-color: rgb(97, 64, 218);
+}
+@media (max-width: 1100px) {
+  .price-card-value {
+    font-size: 30px;
+  }
+  .price-card-desk {
+    font-size: 16px;
+  }
 }
 @media (max-width: 1000px) {
   .fp-overflow.fp-table {
@@ -1461,8 +1485,8 @@ input {
   }
   .price-card-desk {
     text-align: center;
-    padding: 0 2vw;
-    font-size: 2vh;
+    padding: 0 10vw;
+    font-size: 16px;
   }
   .price-card button {
     position: relative;
