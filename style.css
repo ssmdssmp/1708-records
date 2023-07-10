@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
+@font-face {
+  font-family: "PNR";
+  src: url("./assets/ProximaNova-Regular.ttf");
+}
+@font-face {
+  font-family: "PNB";
+  src: url("./assets/ProximaNova-Bold.ttf");
+}
 :root {
-  --main-color: rgba(121, 86, 238, 1);
+  --main-color: #7956ee;
 }
 * {
   box-sizing: border-box;
@@ -13,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
-  font-family: "Lato", sans-serif;
+  font-family: "PNR";
   overflow-x: hidden !important;
 }
 #close-popup {
@@ -34,6 +42,7 @@ body {
   font-size: 10vh;
   color: white;
   display: flex;
+  font-family: "PNB";
   justify-content: center;
   align-items: center;
   font-weight: 700;
@@ -104,6 +113,7 @@ nav {
 .headline-item {
   width: 35vw;
   /* border:1px solid var(--main-color); */
+  font-family: "PNB";
   color: white;
   font-size: 3vh;
   height: 10vh;
@@ -204,6 +214,7 @@ nav ul {
 }
 nav li {
   text-transform: uppercase;
+  font-family: "PNB";
   font-size: 2vh;
 }
 nav li:hover {
@@ -215,6 +226,7 @@ nav li:hover {
   z-index: 20;
   cursor: pointer;
   display: flex;
+  font-family: "PNB";
   align-items: center;
   font-size: 4vh;
   font-weight: 700;
@@ -261,7 +273,7 @@ nav li:hover {
 }
 .intro-content {
   padding: 5vh 5vw;
-  margin-top: 100px;
+  margin-bottom: 2vh;
   display: flex;
   z-index: 10;
   flex-direction: column;
@@ -281,21 +293,29 @@ nav li:hover {
   font-size: 6vh;
   margin: 0;
   padding: 0;
+  font-family: "PNB";
 }
 .intro-content-text h2 span {
   color: var(--main-color);
+  font-family: "PNB";
 }
 .intro-content-text h1 {
   font-size: 6vh;
   margin: 0;
+  font-family: "PNB";
   padding: 0;
 }
 .intro h1 span {
   display: block;
+  font-family: "PNB";
   color: var(--main-color);
 }
 #adress {
   cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+#adress:hover {
+  color: var(--main-color);
 }
 .intro-content-buttons {
   display: flex;
@@ -307,7 +327,9 @@ nav li:hover {
   height: 50px;
   color: white;
   font-size: 19px;
-  border-radius: 2px;
+  border-radius: 8px;
+  font-family: "PNB";
+  transition: all 0.2s ease-in-out;
 }
 .intro-content-buttons button:nth-child(2) {
   background-color: rgba(0, 0, 0, 0);
@@ -319,7 +341,7 @@ nav li:hover {
 }
 .intro-content-buttons button:hover {
   background-color: var(--main-color);
-  border: none;
+  border: 0px solid rgba(255, 255, 255, 0.4);
 }
 .break-intro-gallery {
   position: relative;
@@ -599,6 +621,7 @@ li.slick-active button {
   color: white;
   text-transform: uppercase;
   font-size: 2vh;
+  font-family: "PNB";
   font-weight: 700;
 }
 .dot-popup-desk {
@@ -714,7 +737,7 @@ li.slick-active button {
   max-width: 350px;
   height: fit-content;
   min-height: 550px;
-  border-radius: 4px;
+
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -725,6 +748,7 @@ li.slick-active button {
 .price-card-title {
   text-transform: uppercase;
   font-weight: 700;
+  font-family: "PNB";
   font-size: 30px;
 }
 .price-card-value {
@@ -745,9 +769,16 @@ li.slick-active button {
 }
 .price-card-value-text {
   display: flex;
+  font-family: "PNB";
   gap: 5px;
   align-items: flex-end;
   height: 100%;
+}
+.ghost-icon {
+  height: 50px;
+}
+#ghost-value {
+  font-size: 28px;
 }
 .price-card-value span {
   color: rgb(144, 211, 255);
@@ -855,10 +886,13 @@ li.slick-active button {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
+  font-family: "PNB";
 }
 .examples-item-title span {
   display: block;
+  font-family: "PNR";
   font-weight: 300;
+  text-transform: none;
 }
 .spotify {
   height: 60vh;
@@ -918,7 +952,7 @@ li.slick-active button {
   padding: 0 2vw;
 }
 .contacts-list {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   padding: 0;
   margin: 0px;
   display: flex;
@@ -927,7 +961,16 @@ li.slick-active button {
   list-style: none;
   font-size: 3vh;
 }
-
+.contacts-list li a {
+  text-transform: none;
+}
+.contacts-list li a::-moz-selection {
+  color: white;
+}
+.contacts-list li a::selection {
+  color: white;
+  background-color: var(--main-color);
+}
 .contacts-list .popup {
   flex-direction: column-reverse;
   gap: 3vh;
@@ -959,6 +1002,7 @@ li.slick-active button {
   text-align: center;
   text-transform: uppercase;
   font-size: 3vh;
+  font-family: "PNB";
   margin-top: 9vh;
   margin-bottom: 3vh;
 }
@@ -1021,11 +1065,14 @@ li.slick-active button {
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
+  font-family: "PNB";
   color: white;
 }
 .contacts-form-title span {
   display: block;
+  font-family: "PNR";
   font-size: 2vh;
+  text-transform: none;
   margin-top: 10px;
   text-align: center;
 }
@@ -1047,6 +1094,7 @@ input {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 3px;
+  font-family: "PNB";
   color: white;
   text-transform: uppercase;
   width: 100%;
@@ -1202,6 +1250,7 @@ input {
     color: white;
     display: block;
     z-index: 3;
+    font-family: "PNB";
     text-transform: uppercase;
     padding: 5vh 0;
   }
@@ -1299,6 +1348,7 @@ input {
   }
   .intro-content-text h2 {
     font-size: 4vh;
+    font-family: "PNB";
   }
   .intro a {
     font-size: 3vh;
