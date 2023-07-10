@@ -552,10 +552,10 @@ window.addEventListener("DOMContentLoaded", () => {
         fullpage_api.moveTo(3);
       }
       if (e.target === navArr[1]) {
-        fullpage_api.moveTo(6);
+        fullpage_api.moveTo(4);
       }
       if (e.target === navArr[2]) {
-        fullpage_api.moveTo(4);
+        fullpage_api.moveTo(6);
       }
     });
   });

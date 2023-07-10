@@ -778,7 +778,7 @@ li.slick-active button {
   height: 50px;
 }
 #ghost-value {
-  font-size: 28px;
+  font-size: 32px;
 }
 .price-card-value span {
   color: rgb(144, 211, 255);
@@ -1418,6 +1418,7 @@ input {
     font-size: 2.5vh;
     margin-top: 2vh;
     text-transform: uppercase;
+    font-family: "PNB";
   }
   .item-mob-text {
     color: white;
@@ -1543,6 +1544,7 @@ input {
     margin-top: 5vh;
     width: 80%;
     height: 5vh;
+    font-family: "PNB";
     border-radius: 8px;
   }
   .price-bg {
