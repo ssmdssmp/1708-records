@@ -287,6 +287,7 @@ nav li:hover {
 .intro-content-text a {
   text-decoration: none;
   font-size: 28px;
+  width: fit-content;
   color: white;
 }
 .intro-content-text h2 {
@@ -720,6 +721,7 @@ li.slick-active button {
 .price-card-wrapper {
   display: flex;
   flex-wrap: wrap;
+  max-width: 1500px;
   width: 90vw;
   justify-content: space-between;
 }
@@ -946,6 +948,7 @@ li.slick-active button {
   display: flex;
   flex-direction: column;
   height: 84vh;
+  width: 20vw;
   justify-content: space-between;
 }
 .contacts-info .popup {
@@ -1055,7 +1058,7 @@ li.slick-active button {
   justify-content: start;
   height: 35vh;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
 }
 .contacts-form-title {
   font-size: 3vh;
@@ -1110,6 +1113,8 @@ input {
   z-index: 2000;
   position: fixed;
   top: 0;
+  align-items: center;
+  width: 30vw;
   height: 100vh;
   flex-direction: column-reverse;
   justify-content: start;
@@ -1653,6 +1658,7 @@ input {
   .contacts-form button {
     width: 100%;
     height: unset;
+    max-width: unset;
     padding: 2vh;
     font-size: 2vh;
   }
