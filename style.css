@@ -875,7 +875,7 @@ li.slick-active button {
   flex-direction: row-reverse;
 }
 .examples-item-title {
-  border-radius: 3px;
+  border-radius: 12px;
   background-color: var(--main-color);
   width: 400px;
   height: 100px;
@@ -1599,7 +1599,7 @@ input {
     width: 90vw;
     font-size: 2vh;
     height: 10vh;
-    border-radius: 8px;
+    border-radius: 12px;
   }
   .examples-item-spotify {
     width: 90vw;
