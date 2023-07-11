@@ -588,12 +588,11 @@ li.slick-active button {
   width: 30vw;
   opacity: 0;
   height: fit-content;
-  padding: 1vh 0;
+  padding: 15px;
   backdrop-filter: blur(20px) saturate(0%);
   -webkit-backdrop-filter: blur(20px) saturate(0%);
   background-color: rgba(121, 86, 238, 0.57);
   justify-content: space-between;
-  padding: 1.5vh 1vw;
   border-radius: 12px;
 }
 #apolo .equip-dot-popup {
