@@ -811,7 +811,7 @@ li.slick-active button {
   text-transform: uppercase;
   background-color: var(--main-color);
   border: none;
-  border-radius: 3px;
+  border-radius: 12px;
   color: white;
 }
 .price-card-desk {
@@ -1087,7 +1087,7 @@ input {
   width: 100%;
   background-color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 12px;
 }
 .contacts-form button {
   cursor: pointer;
@@ -1096,7 +1096,7 @@ input {
   margin: 0 auto;
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
-  border-radius: 3px;
+  border-radius: 12px;
   font-family: "PNB";
   color: white;
   text-transform: uppercase;
