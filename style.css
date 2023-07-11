@@ -593,7 +593,7 @@ li.slick-active button {
   -webkit-backdrop-filter: blur(20px) saturate(0%);
   background-color: rgba(121, 86, 238, 0.57);
   justify-content: space-between;
-  padding: 1.5vh 1.5vw;
+  padding: 1.5vh 1vw;
   border-radius: 12px;
 }
 #apolo .equip-dot-popup {
@@ -948,7 +948,7 @@ li.slick-active button {
   display: flex;
   flex-direction: column;
   height: 84vh;
-  width: 20vw;
+  width: 23vw;
   justify-content: space-between;
 }
 .contacts-info .popup {
@@ -1681,7 +1681,6 @@ input {
   .contacts-list i,
   .contacts-list li a {
     font-size: 2.5vh;
-    text-transform: uppercase;
   }
   .calendar-list-item {
     margin-bottom: 0;
