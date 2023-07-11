@@ -3,11 +3,28 @@
 window.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
   const introContentButtons = document.querySelector(".intro-content-buttons");
-  var ua = navigator.userAgent.toLowerCase();
-  var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-  if (isAndroid) {
-    introContentButtons.style.marginBottom = "40px";
+  function iOS() {
+    return (
+      [
+        "iPad Simulator",
+        "iPhone Simulator",
+        "iPod Simulator",
+        "iPad",
+        "iPhone",
+        "iPod",
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    );
   }
+  iOS()
+    ? innerWidth < 1000
+      ? (introContentButtons.style.marginBottom = "100px")
+      : (introContentButtons.style.marginBottom = "0px")
+    : innerWidth < 1000
+    ? (introContentButtons.style.marginBottom = "20px")
+    : (introContentButtons.style.marginBottom = "0px");
+
   // Preloader
 
   const preloader = document.querySelector(".preloader"),
